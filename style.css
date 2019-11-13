@@ -1,0 +1,56 @@
+/*@import url("")*/
+h1 {text-align: center;
+
+}
+h1, h2 {
+    text-decoration: underline;
+    color: plum;
+}
+
+ul, ol {
+    color: plum;
+
+}
+table {
+    color: plum;}
+
+p{
+    color: plum;
+}
+
+
+body {
+    background-image: linear-gradient(to bottom right, red , blue);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1{
+    color: plum;
+    font-size: 10vw;
+    animation: fadeIn 5s;
+}
+/*Add a style to change the table, table cells td and rows tr padding and font sizes*/
+table, tr, td, th {
+    padding: 20px;
+    font-size: x-large;
+}
+/*A style to alter anchor tags and it's different states*/
+
+a:link{
+    color: indianred;
+}
+a:visited{
+    color: blueviolet;
+}
+
+a:active {
+    color: m
+}
