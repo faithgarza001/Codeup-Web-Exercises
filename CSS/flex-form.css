@@ -1,0 +1,63 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    overflow: hidden;
+
+}
+
+.puppiness {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.btn-primary {
+    background: #b4d455;
+    border-top: 1px solid #b4d455;
+    border-bottom: 1px solid #b4d455;
+    color: white;
+
+
+}
+
+
+/*flex solution*/
+    .cover {
+        display: flex;
+
+
+        /* flex container */
+    }
+
+    .flex-form {
+        display: flex;
+        margin: auto;
+
+
+
+
+
+        /* flex items */
+    }
+
+    .destination {
+
+flex-basis: 10em;
+
+    }
+
+
+
+
+

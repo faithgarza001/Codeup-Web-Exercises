@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF_8">
+    <title>CSS grid layout 2</title>
+</head>
+<style>
+    /* GLOBAL STYLES */
+
+    body {
+        display: grid;
+        grid-template-areas:
+                "Header Header Header"
+                "Nav Article Ads"
+                "Nav Footer Footer";
+        grid-template-rows: 80px 1fr 70px;
+        grid-template-columns: 20% 1fr 15%;
+        grid-row-gap: 10px;
+        grid-column-gap: 10px;
+        height: 100vh;
+        margin: 0;
+
+    }
+
+    header, footer, article, nav, div {
+        padding: 1.2em;
+        background: gold;
+    }
+
+
+
+
+
+    #Header {
+        grid-area: Header;
+
+
+
+    }
+
+    #Footer {
+        grid-area: Footer;
+
+
+    }
+
+    #Article {
+        grid-area: Article;
+
+
+    }
+
+    #Nav {
+        grid-area: Nav;
+
+    }
+
+    #Ads{
+        grid-area: Ads;
+    }
+
+    @media all and (max-width: 575px) {
+        body {
+            grid-template-areas:
+                    "Header"
+                    "Article"
+                    "Ads"
+                    "Nav"
+                    "Footer";
+            grid-template-rows: 80px 1fr 70px 1fr 70px;
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+
+</style>
+<body>
+        <Header id="Header">Header</Header>
+        <Article id="Article">Article</Article>
+        <Nav id="Nav">Nav</Nav>
+        <div id="Ads">Ads</div>
+        <Footer id="Footer">Footer</Footer>
+
+
+</body>
+</htmL>

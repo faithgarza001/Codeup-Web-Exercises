@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF_8">
+    <title>CSS grid layout 1</title>
+</head>
+<style>
+    /* GLOBAL STYLES Layout 6*/
+
+    body {
+        display: grid;
+        grid-template-areas:
+                "Header Header Header"
+                "Nav Article Ads"
+                "Nav Footer Footer";
+        grid-template-rows: 80px 1fr 80px;
+        grid-template-columns: 1fr 70px 1fr;
+        grid-row-gap: 10px;
+        grid-column-gap: 10px;
+        height: 100vh;
+        margin: auto;
+
+    }
+
+    Header, Footer, Article, Nav, Div {
+        padding: 1.2em;
+        background: lightgreen;
+    }
+
+    .header {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 2;
+
+
+    }
+
+    .footer {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 4;
+        grid-row-end: 5;
+
+
+    }
+
+    .article{
+        grid-column-start:2;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        grid-row-end: 3;
+
+
+    }
+
+    .nav {
+        grid-area: Nav;
+    }
+
+    .ads{
+        grid-column-start:2;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 4;
+
+    }
+
+
+
+</style>
+<body>
+
+    <header class="header">header</header>
+    <nav class="nav">nav</nav>
+    <article class="article">article</article>
+    <div class="ads">ads</div>
+    <footer class="footer">footer</footer>
+
+
+</body>
+</htmL>

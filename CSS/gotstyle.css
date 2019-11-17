@@ -1,0 +1,96 @@
+.glow {
+    font-size: 1.3em;
+    color: #fff;
+    text-align: left;
+    -webkit-animation: glow 3s ease-in-out infinite alternate;
+    -moz-animation: glow 3s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite alternate;
+    margin: .5em 1em;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 .5em #f0ff, 0 0 1em #f0ff, 0 0 1.5em #f0ff, 0 0 1.5em #f0ff, 0 0 2em #f0ff, 0 0 2.5em #f0ff, 0 0 3em #f0ff;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+.clip-text {background-image: url(https://comps.canstockphoto.com/happy-smiling-star-shapes-clip-art_csp50903625.jpg);
+    width: calc(50% - -1em);
+    color: crimson;
+}
+.clip-text {
+    font-size: 6em;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    margin: .25em;
+    padding: .5em .75em;
+    text-align: center;
+    /* Color fallback */
+    color: #fff;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.clip-text:before,
+.clip-text:after {
+    position: absolute;
+    content: '';
+}
+
+/* Background */
+.clip-text:before {
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+}
+
+/* Text Background (black zone) */
+.clip-text:after {
+    position: absolute;
+    z-index: -1;
+    top: .45em;
+    right: .45em;
+    bottom: .45em;
+    left: .45em;
+    background-color: black;
+}
+
+/* Change the background position to display letter when the black zone isn't here */
+.clip-text--no-textzone:before {
+    background-position: -.75em 0;
+}
+
+.clip-text--no-textzone:after {
+    content: none;
+}
+
+/* Use Background-size cover for photo background and no-repeat background */
+.clip-text--cover,
+.clip-text--cover:before {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.options { background: url(https://image.shutterstock.com/image-vector/black-colors-rainbow-wave-background-260nw-1464421517.jpg) repeat, white;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-animation-name: masked-animation;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes masked-animation {
+    0% {background-position: left bottom;}
+    100% {background-position: right bottom;}
+}
