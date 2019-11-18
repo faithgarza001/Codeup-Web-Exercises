@@ -1,0 +1,39 @@
+@media all and (min-width: 500px) and (max-width: 1440px) {
+    selector {
+        property: value;
+    }
+    body {
+        background-color: #0fb784;
+        color: #9e4157;
+    }
+}
+@media all and (max-width: 320px) {
+    body {
+        background-color: #9e4157;
+        color: #372f93;
+    }
+}
+@media all and (max-width: 768px) {
+    body {
+        background-color: #372f93;
+        color: #b4d455;
+    }
+}
+@media all and (max-width: 575px) {
+    body {
+        background-color: #b4d455;
+        color: orange;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    body {
+        background-color: #30447B;
+        color: orangered;
+    }
+
+}
+
+/*Above is standardized formatting for use of multiple device view for the user/ this is now the standardized way of using the formatting user friendly view through the browser
+look into "wireframe"*/
+/*shared qualities go into regular styling of css differences go into media queries*/

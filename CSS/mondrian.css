@@ -3,11 +3,13 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 150px 150px 100px 150px 50px;
     grid-gap: 1em 1em;
-    margin: 0;
+    margin: auto;
     background-color: black;
     border: 2em;
     border-color: black;
-    padding: 10px;
+    padding: 4px;
+
+
 }
 
 .item-2 {
