@@ -1,38 +1,115 @@
-@media all and (min-width: 500px) and (max-width: 1440px) {
-    selector {
-        property: value;
-    }
-    body {
-        background-color: #0fb784;
-        color: #9e4157;
-    }
-}
-@media all and (max-width: 320px) {
-    body {
-        background-color: #9e4157;
-        color: #372f93;
-    }
-}
-@media all and (max-width: 768px) {
-    body {
-        background-color: #372f93;
-        color: #b4d455;
-    }
-}
-@media all and (max-width: 575px) {
-    body {
-        background-color: #b4d455;
-        color: orange;
-    }
+ @media all and (max-width: 360px){
+    * {
+        margin: 0;
+        padding: 0;}
+ body{
+    display: grid;
+    grid-template-columns: 100%;
+     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+     padding: 5px;
+ }
 }
 
+img{
+     width: 100%;
+
+
+}
+nav ul{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 5px;
+
+
+}
+.alert-info { text-decoration: none;
+
+}
+
+li
+{   background-color: #848487;
+    padding: 1em;
+    margin: .4em;
+    width: 100%;
+}
+h1{
+    text-align: center;
+}
+/*mobile display above*/
 @media all and (min-width: 1200px) {
-    body {
-        background-color: #30447B;
-        color: orangered;
-    }
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: grid;
+    grid-template-columns: 50% 35%;
+    grid-template-rows: 20% 45% 50% 30% 20%;
+}
+h1{
+    grid-area: 1/2/1/1;
+    text-align: left;
+}
+nav ul{
+    grid-area: 2/2/1/1;
+    list-style: none;
+    display: flex;
+    justify-content: end;
+    padding: 15px;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-between;
+}
+.alert-info {
+    display: none;
+}
+.main{
+    grid-column-start:1;
+    grid-row-start: 3;
+    grid-column-end:1;
+    grid-row-end: 3;
+}
+.sub-section{
+    grid-column-start:2;
+    grid-row-start: 3;
+    grid-column-end:2;
+    grid-row-end: 3;
+}
+/*footer{
+    grid-column-start: 1;
+    grid-row-start: 4;
+    grid-column-end: 1;
+    grid-row-end: 5;
+}*/
+img {
+    width: 100%;
 
 }
+.header-img{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.social-media.links{
+    grid-column-start: 1;
+    grid-row-start: 4;
+    grid-column-end: 1;
+    grid-row-end: 5;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+
+
+
+
 
 /*Above is standardized formatting for use of multiple device view for the user/ this is now the standardized way of using the formatting user friendly view through the browser
 look into "wireframe"*/
