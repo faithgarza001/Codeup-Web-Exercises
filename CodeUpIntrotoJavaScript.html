@@ -63,33 +63,33 @@ console.log(g);
 
     isNaN(false);
 
-    !true
+    !true;
 
-    !false
+    !false;
 
-    !!true
+    !!true;
 
-    !!false
+    !!false;
 
-    !!0
+    !!0;
 
-    !!-0
+    !!-0;
 
-    !!1
+    !!1;
 
-    !!-1
+    !!-1;
 
-    !!0.1
+    !!0.1;
 
-    !!"hello"
+    !!"hello";
 
-    !!""
+    !!"";
 
-    !!''
+    !!'';
 
-    !!"false"
+    !!"false";
 
-    !!"0"
+    !!"0";
 
     // to illustrate why the isNaN() function is needed:
     NaN == NaN
@@ -104,24 +104,47 @@ console.log(g);
     console.log(n);
     // The answer for the js above is 12
 
-    var greeting = "Howdy";
-    var name = "Molly";
 
-    var welcomeMessage = greeting + name; "!";
-    var el = document.getElementById("greeting");
-    el.textContent + welcomeMessage;
 
-    console.log(welcomeMessage);
+
 //Exercise 3
-    var theLittleMermaidQty = document.getElementById('3');
-    var brotherBearQty = document.getElementById('5');
-    var herculesQty = document.getElementById('1');
-    var outputPara = document.getElementById('3');
-
-    console.log(outputPara * (theLittleMermaidQty + brotherBearQty + herculesQty));
+    var theLittleMermaid = '3';
+    var brotherBear = '5';
+    var hercules = '1';
 
 
+   console.log(theLittleMermaid + brotherBear + hercules) * 3;
 
+
+var googRate = 400;
+var amaRate = 380;
+var fbRate = 350;
+
+var googMoney = 6 * googRate;
+var amaMoney = amaRate * 4;
+var fbMoney = fbRate * 10;
+
+console.log(googMoney);
+
+var classAt8Am = false;
+
+var classSize = 125;
+
+var currClassSize = 108;
+
+var canRegister = (currClassSize < classSize) &&
+        !classAt8Am;
+
+var hasKrogerCard = true;
+var cartSize = 6;
+var offerValid = true;
+var canHasDiscount = offerValid && (cartSize > 2 || hasKrogerCard);
+
+
+var atLeastFivePass = password.length >= 5;
+ console.log(atLeastFivePass);
+
+ var noWhiteSPace = username.trim() === username && password.trim() === password;
 
 
 
