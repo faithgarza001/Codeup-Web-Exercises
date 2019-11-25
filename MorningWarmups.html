@@ -94,12 +94,29 @@ if (numInput > 10){
             }
 
 }
-c
+
 //Once the return is done the block of code stops at that point
+ var area = function() {
+     var width = 3;
+     var height = 2;
+     return (width * height);
+ };
 
+        var hotel = {
+            name: 'Quay',
+            rooms: 40,
+            booked: 25,
+            gym: true,
+            roomTypes: ['twin', 'double', 'suite'],
+            checkAvailability: function(){
+                return this.rooms - this.booked;
+            }
+        };
+// the below content is the easiest way to turn num into a string
+var float = 8.23;
+        float + "";
 
-
-
+        float.toString();
 
     </script>
 </body>

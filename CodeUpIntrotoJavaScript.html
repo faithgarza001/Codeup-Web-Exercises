@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a = 1;
+    var b = a++;
+    var c = ++a;
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+//The value of a, b and c is 3/1/3
+var d = "hello";
+var e = false;
+var f = d++;
+var g = e++;
+//The values of the following are (d) NaN, (e) 1 ,(f) NaN,(g) 0
+console.log(d);
+console.log(e);
+console.log(f);
+console.log(g);
+
+
+   //var perplexed; // perplexed is undefined (no value is assigned)
+    //perplexed + 2;
+
+//The above answer shows as NaN
+   // var price = 2.7;
+    //price.toFixed(2);
+
+//The above answer shows as "2.70" a string
+   // var price = "2.7";
+   // price.toFixed(2);
+    //The above is not a function
+    isNaN(0);
+
+
+    isNaN(1);
+
+    isNaN("");
+
+    isNaN("string");
+
+    isNaN("0");
+
+    isNaN("1");
+
+    isNaN("3.145");
+
+    isNaN(Number.MAX_VALUE);
+
+    isNaN(Infinity);
+
+    isNaN("true");
+
+    isNaN(true);
+
+    isNaN("false");
+
+    isNaN(false);
+
+    !true
+
+    !false
+
+    !!true
+
+    !!false
+
+    !!0
+
+    !!-0
+
+    !!1
+
+    !!-1
+
+    !!0.1
+
+    !!"hello"
+
+    !!""
+
+    !!''
+
+    !!"false"
+
+    !!"0"
+
+    // to illustrate why the isNaN() function is needed:
+    NaN == NaN
+
+    //Exercise 2
+    var firstNameLength = 0;
+    var firstName = "Ada";
+    console.log(firstName);
+    //Answer for this is Ada
+    var str = "Hello World!";
+    var n = str.length;
+    console.log(n);
+    // The answer for the js above is 12
+
+    var greeting = "Howdy";
+    var name = "Molly";
+
+    var welcomeMessage = greeting + name; "!";
+    var el = document.getElementById("greeting");
+    el.textContent + welcomeMessage;
+
+    console.log(welcomeMessage);
+//Exercise 3
+    var theLittleMermaidQty = document.getElementById('3');
+    var brotherBearQty = document.getElementById('5');
+    var herculesQty = document.getElementById('1');
+    var outputPara = document.getElementById('3');
+
+    console.log(outputPara * (theLittleMermaidQty + brotherBearQty + herculesQty));
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
