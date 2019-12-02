@@ -75,7 +75,7 @@ console.log("hello from out external js file!");
 /*{
 var hasKrogerCard = parseInt(prompt("Do you have a KrogerCard?")); {
  */
-  /*  var offerValid = confirm("Is the offer valid?");
+  /*  var offerValid = /.confirm("Is the offer valid?");
     if(offerValid === true)
         alert ("")
     (prompt("Would you like to sign up for a Kroger card at this time?"))};
