@@ -62,26 +62,27 @@
 
 	</div>
 
-
-
-
 	<script>
 		//This is an inline example
 		//TODO: Console.log "Hello, World! From inline" from an inline JS script
 		//console.log("Hello, World! from Inline");
 	</script>
+	<script src="js/js-external-lec.js"> </script>
 
 
 
-	<script>
-		//This is a use strict example
-		myAge = 25
+		<script>
+	//This is a use strict example
+			//"use strict";
+	// var myAge = 25
+	//console.log(myAge);
 
-		//TODO: add "use strict"; above myAge. What do you notice in the console?
+			//TODO: add "use strict"; above myAge. What do you notice in the console?
 
-		//NOTE**  Be sure to use this at the top of your JavaScript code from now on.
-
+			//NOTE**  Be sure to use this at the top of your JavaScript code from now on
 	</script>
+
+
 
 	<script>
 		// This is for the user interactions
@@ -94,7 +95,7 @@
 
 
 		//TODO TOGETHER: Write an alert ---> alert("Message goes here.");
-
+				alert("Welcome to my Website!");
 
 		//TODO: Write an alert with an alert message
 
@@ -105,16 +106,34 @@
 		* ********************/
 
 
-		//TODO TOGETHER: Write a confirm interaction and console.log the result
-		// the following line will show the OK/CANCEL confirm dialog
-
+		//TODO TOGETHER: Write a confirm interaction and console.log the result this will return a boolean value
+		//var confirm = confirm("Are you sure you want to exit");
+		//console.log(confirm);
+		//var confirm = confirm("Is everything ok today.");
+		//console.log(confirm);
 		// TODO: Select the OK option. View the result. Select the confirm option. View the result.
 
 
 		/* *******************
 		*		Prompts
 		* ********************/
-		// TODO TOGETHER: Write a prompt interaction. Console.log the result
+		// TODO TOGETHER: Write a prompt interaction. Console.log the result we set equal to variable to capture what user is putting in
+/* to set a prompt equal to variable*/
+		var userInput = prompt("What's your favorite color");
+		console.log("What's your favorite color");
+		{
+			if (userInput = "blue") {
+				alert("Great, blue is my favorite color too!");
+			} else {
+				(userInput = (null));
+				alert("Really you don't have a favorite color?");
+			}
+		}
+
+
+
+
+
 
 		// TODO: Write an additional prompt. Console.log the result
 
