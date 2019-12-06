@@ -141,7 +141,7 @@
 //Create a function that takes two numbers as arguments and return their sum.
           // function addition (a, b) {
           //     return a + b;
-           }
+           //}
           //     console.log(addition(2, 3))
  //Create a function that takes a number as it's only argument and return true if it's less than or equal to zero otherwise return false.
           // function lessThanOrEqualToZero(num) {
@@ -151,15 +151,33 @@
         //var lastNameLength = 0;
 //var lastName = "Lovelace";
 
-function seeYouLater(inputString) {
-    if (inputStringr = "alligator")
-            return "See you later alligator.";
-        } else if (inputString = "crocodile"){
-            return "After a while crocdile";
-        } else {
-                return "So Long!";
+//function seeYouLater(inputString) {
+  //  if (inputString = "alligator")
+    //        return "See you later alligator.";
+      //  } else if (inputString = "crocodile"){
+        //    return "After a while crocdile";
+        //} else {
+          //      return "So Long!";
+        //}
+        //console.log(seeYouLAter("alligator"));
+
+        //Write a js function that receives another function as a parameter and executes it then call the function and pass it in an anonymous function as an argument
+       function functionA(callbackFunction) {
+            callbackFunction("It works!"); //call should be B();
         }
-        console.log(seeYouLAter("alligator"));
+
+        functionA(function (message) {
+            alert(message);
+        });
+
+
+        functionA(functionB);
+            function functionB() {
+                alert("It works!")
+            }
+
+
+
 
 // Sudo Code is good practice
 //  1. Write a function--->seeYouLater (inputString)
