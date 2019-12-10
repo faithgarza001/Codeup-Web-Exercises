@@ -141,7 +141,7 @@
 //Create a function that takes two numbers as arguments and return their sum.
           // function addition (a, b) {
           //     return a + b;
-           }
+           // }
           //     console.log(addition(2, 3))
  //Create a function that takes a number as it's only argument and return true if it's less than or equal to zero otherwise return false.
           // function lessThanOrEqualToZero(num) {
@@ -167,9 +167,13 @@
 var contains = function(arr,param) {
        // return arr.includes(param);
     for (var i = 0;i<arr.length;i++) {
-        if(arr[i] === param) return true;
+        if(arr[i] === param){ return true;
     }
 }
+return false;
+        }
+console.log(contains(["a","b","c","d","e"],"c"))
+console.log(contains([1,2,3],3));
 
 
       // var contains = function(arr, param){
