@@ -151,16 +151,31 @@
         //var lastNameLength = 0;
 //var lastName = "Lovelace";
 
-function seeYouLater(inputString) {
-    if (inputStringr = "alligator")
-            return "See you later alligator.";
-        } else if (inputString = "crocodile"){
-            return "After a while crocdile";
-        } else {
-                return "So Long!";
-        }
-        console.log(seeYouLAter("alligator"));
+// function seeYouLater(inputString) {
+//     if (inputStringr = "alligator")
+//             return "See you later alligator.";
+//         } else if (inputString = "crocodile"){
+//             return "After a while crocdile";
+//         } else {
+//                 return "So Long!";
+//         }
+//         console.log(seeYouLAter("alligator"));
+// Write a function called "contains that receives an array  and another param
+//and returns true if the param is found in the array
+//there is an easy way, but if you find it maybe try the loop way
+//Easy way
+var contains = function(arr,param) {
+       // return arr.includes(param);
+    for (var i = 0;i<arr.length;i++) {
+        if(arr[i] === param) return true;
+    }
+}
 
+
+      // var contains = function(arr, param){
+       // return true;
+       //}
+       console.log(contains());
 // Sudo Code is good practice
 //  1. Write a function--->seeYouLater (inputString)
 //2. if = conditions (3 conditions. 1) alligator 2) crocodile 3) so long
