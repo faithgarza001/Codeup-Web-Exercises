@@ -38,6 +38,115 @@
 //
 // }
 
+
+
+//Things to cover with array .length, .shift, .unshift, .indexOf .push .lastIndexOf .join .split .capitalize .reverse .split .sort
+//push,pop, (modify array at the end) Shift and unshift(beginning) indexOf and lastIndexOf look for the items in an array.
+//using the .length
+//On this Page
+// Syntax
+// Description
+// Examples
+// Specifications
+// Browser compatibility
+var fruits = ["apple", "pear", "banana", "grape","mango","pinapple"]
+var fruits1thru3 = fruits.slice(0,3);
+console.log(fruits1thru3);
+console.log(fruits);
+
+
+var sentence = "the quick brown fox jumps over the lazy dog";
+console.log(sentence);
+var words = sentence.split("");
+console.log(words.slice(2,4));
+
+
+//you need to complete exercise below
+//capitalize each letter capitilize for letter is firstLetter.toUpperCase
+var sentence = "The quick brown fox jumps over the lazy dog";
+var words = sentence.split("");
+words.forEach(function(word){
+    var firstLetter = word.split().unshift();
+})
+
+
+// The shift() method removes the first element from an array and returns that removed element.
+// This method changes the length of the array
+var myFish = ['angel', 'clown', 'mandarin', 'surgeon'];
+
+console.log('myFish before:', JSON.stringify(myFish));
+// myFish before: ['angel', 'clown', 'mandarin', 'surgeon']
+
+var shifted = myFish.shift();
+
+console.log('myFish after:', myFish);
+// myFish after: ['clown', 'mandarin', 'surgeon']
+
+console.log('Removed this element:', shifted);
+// Removed this element: angel
+
+
+// The unshift() method adds one or more elements to
+// the beginning of an array and returns the new length of the array.
+//using the .unshift
+var arr = [4, 5, 6];
+
+arr.unshift(1, 2, 3);
+console.log(arr);
+// [1, 2, 3, 4, 5, 6]
+
+arr = [4, 5, 6]; // resetting the array
+
+arr.unshift(1);
+arr.unshift(2);
+arr.unshift(3);
+
+console.log(arr);
+// [3, 2, 1, 4, 5, 6]
+
+//
+
+//The indexOf() method returns the first index at which a given element
+// can be found in the array, or -1 if it is not present.
+//indexOf() compares searchElement to elements of the Array
+// using strict equality (the same method used by the === or triple-equals operator)
+//syntax: arr.indexOf(searchElement[, fromIndex])
+//Using the indexOf
+var array = [2, 9, 9];
+array.indexOf(2);     // 0
+array.indexOf(7);     // -1
+array.indexOf(9, 2);  // 2
+array.indexOf(2, -1); // -1
+array.indexOf(2, -3); // 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//using the .length
+var cats = ['Dusty', 'Misty', 'Twiggy'];
+console.log(cats.length); // 3
+
+cats.length = 2;
+console.log(cats); // logs "Dusty, Misty" - Twiggy has been removed
+
+cats.length = 0;
+console.log(cats); // logs []; the cats array is empty
+
+cats.length = 3;
+console.log(cats); // logs [ <3 empty items> ]
 //The following is from the study group for js assessment 2
 "use strict";
 
