@@ -37,10 +37,14 @@
 //     i++;
 //
 // }
+function palindrome(input) {
+    return true;
+}
+console.log(palindrome("dog"));
 
 
-
-//Things to cover with array .length, .shift, .unshift, .indexOf .push .lastIndexOf .join .split .capitalize .reverse .split .sort
+//Look into Array prototypes
+//Things to cover with array .length, .shift, .unshift, .indexOf .push .lastIndexOf .join .split .capitalize .reverse .split .sort .pop
 //push,pop, (modify array at the end) Shift and unshift(beginning) indexOf and lastIndexOf look for the items in an array.
 //using the .length
 //On this Page
@@ -49,7 +53,55 @@
 // Examples
 // Specifications
 // Browser compatibility
-var fruits = ["apple", "pear", "banana", "grape","mango","pinapple"]
+//Array is an object is ( a list of things)
+//The function below gives an array in reverse using the .reverse
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.reverse();
+
+
+//Get last item in an array
+function getLastItem(arr) {
+    return arr.pop();
+}
+
+//Using tbe .
+
+var car ={
+    make: "Ford",
+    model: "Mustang",
+    year: 2008,
+    isTitled: true,
+    options:[
+        "Turbo",
+        "Heated Seats",
+    "leather interior",
+    "A/C"],
+
+    goGoGo: function(key) {
+        if(key == "key"){
+            console.log("vroom");}
+        else
+        }console.log("...");
+
+
+    }
+}
+
+console.log("Car was made in" + car.year);
+console.log("car has these options:");
+car.options.forEach(function(option){
+    car options.forEach(function(option){
+
+}
+
+var teacher = {
+        name:"Daniel",
+    languages:["1","2","3"],
+    teach:function ("blah blah blah"); {
+
+    }
+}
+var fruits = ["apple", "pear", "banana", "grape","mango","pineapple"]
 var fruits1thru3 = fruits.slice(0,3);
 console.log(fruits1thru3);
 console.log(fruits);
@@ -119,22 +171,6 @@ array.indexOf(9, 2);  // 2
 array.indexOf(2, -1); // -1
 array.indexOf(2, -3); // 0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //using the .length
 var cats = ['Dusty', 'Misty', 'Twiggy'];
 console.log(cats.length); // 3
@@ -147,6 +183,20 @@ console.log(cats); // logs []; the cats array is empty
 
 cats.length = 3;
 console.log(cats); // logs [ <3 empty items> ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //The following is from the study group for js assessment 2
 "use strict";
 
@@ -287,6 +337,38 @@ function getLowestNumber(x, y, z) {
  console.log(getLowestNumber(1, "otter", 30)); // false
  console.log(getLowestNumber(-53, 72, 7)); // -53
 
+//Split, reverse and join string to get reversed text
+//Example 1
+function palindrome(text) {
+
+    var reversedText  = text.toLowerCase()
+        .split('').reverse().join('');
 
 
+    return text === reversedText;
 
+}
+console.log(palindrome("eye"));
+//Example
+//function palindrome(text) {
+// // Split, reverse and join string to get reversed text
+//     var reversedText  = text.toLowerCase()
+//         .split('').reverse().join('');
+//
+//
+//     return text === reversedText;
+//
+// }
+// console.log(palindrome("dog"));
+//Example 2
+//     function reverseUpperCaseString(input) {
+//         if(!isNaN(parseFloat(input))) {
+//             return false;
+//         }else if (typeof input !== "string") {
+//             return false;
+//         }else{
+//             var input2 = (input.split("").reverse().join("")).toUpperCase();
+//             return  input2 === input.toUpperCase();
+//         }
+//     }
+//
