@@ -46,3 +46,15 @@ function changeEnough(change, amountDue) {
     }
 }
 changeEnough([2, 100, 0, 0], 14.11)
+
+//Write a function that converts an object into an array, where each element represents a key-value pair
+//write a function called to array that accepts an object as a parameter
+//create a variable that takes in an array
+//creat a for loop that
+function toArray(obj) {
+    var a = [];
+    for(var i in obj){
+        a.push([i,obj[i]]);
+    }
+    return a;
+}
