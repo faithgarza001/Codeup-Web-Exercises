@@ -137,6 +137,15 @@
         });
 
 
+        var button2 = document.getElementById("btn2");
+        button2.addEventListener("click", function() {
+            // TODO: Uncomment the next line and get the sub header element by id
+            var subHeader = document.getElementById("sub-header");
+            // TODO: Set the text color of subHeader to blue
+            // subHeader.style.color = "blue";
+            subHeader.setAttribute("class",
+                subHeader.getAttribute("class") + " blue");
+        });
 
     })();
 </script>
