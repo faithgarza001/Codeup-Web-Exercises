@@ -164,26 +164,73 @@
 //and returns true if the param is found in the array
 //there is an easy way, but if you find it maybe try the loop way
 //Easy way
-var contains = function(arr,param) {
-       // return arr.includes(param);
-    for (var i = 0;i<arr.length;i++) {
-        if(arr[i] === param){ return true;
-    }
-}
-return false;
-        }
-console.log(contains(["a","b","c","d","e"],"c"))
-console.log(contains([1,2,3],3));
+// var contains = function(arr,param) {
+//        // return arr.includes(param);
+//     for (var i = 0;i<arr.length;i++) {
+//         if(arr[i] === param){ return true;
+//     }
+// }
+// return false;
+//         }
+// console.log(contains(["a","b","c","d","e"],"c"))
+// console.log(contains([1,2,3],3));
 
 
       // var contains = function(arr, param){
        // return true;
        //}
-       console.log(contains());
+       // console.log(contains());
 // Sudo Code is good practice
 //  1. Write a function--->seeYouLater (inputString)
 //2. if = conditions (3 conditions. 1) alligator 2) crocodile 3) so long
 
+
+// JavaScript Exercises Redrawn//
+
+
+        //  Exercise 1
+        // On the line below, create a variable named outerSpace and assign it the boolean value of false
+
+        var outerSpace = false
+        console.log(outerSpace)
+
+        // Exercise 2
+        // Create a variable named sweets and assign it an array of strings containing the following fruits.
+        //banana, kiwi, orange, apple, mango
+
+        var sweets = ["banana", "kiwi", "orange", "mango" ];
+        console.log(sweets)
+
+        //  Exercise 3
+        //  Create a variable named vitamins and assign it an array of vegetables containing the following vegetable names as strings:
+        //  peas, snap-peas, spinach, tomato, carrots
+
+var vitamins = ["peas", "snap-peas", "spinach", "tomato", "carrots"]
+        console.log(vitamins)
+
+
+        //Exercise 4
+        // Create a variable named numbers and assign it an array of numbers, 1.1, 2.2, 3.3, 4.4, 5.5,
+
+var numbers = [1.1, 2.2, 3.3, 4.4,5.5 ,6.6]
+        console.log(numbers)
+
+
+
+        // Exercise 5
+        // Add the string "tomato" to the end of the sweets array.
+        // *Hint* Recommend finding and using a built-in JS operation to add to an array rather than recreating the array.
+
+        sweets.push("tomato");
+        console.log(sweets)
+
+        // Exercise 6
+        // add the string "tumeric" onto the end of the vitamins array.
+        // Recommend using the built-in JS operation to add to an array.
+
+
+        vitamins.push("tumeric");
+        console.log(vitamins)
     </script>
 </body>
 </html>
