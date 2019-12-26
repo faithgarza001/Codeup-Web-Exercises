@@ -265,6 +265,22 @@ console.log(solveForExp(7, 2));
             }
             return x;
         }
+        console.log(solveForExp(a, b));
+
+        // Create a function that takes the height and radius of a cone as arguments and returns the volume and surfaceArea of the cone.
+        function coneTask(a, b) {
+            var s = Math.sqrt(a * a + b * b);
+            var volume = Math.PI * a * a * b / 3;
+            console.log("volume = " + volume);
+            var area = Math.PI * a * (a + s);
+            console.log("area = " + area);
+        }
+
+        // Create a function that takes the height and radius of a cone as arguments and returns the volume of the cone.
+        function coneVolume(h, r) {
+            return Math.round((Math.PI*r*r*(h/3))*100)/100;
+        }
+        coneTask(3, 5);
     </script>
 </body>
 </html>
