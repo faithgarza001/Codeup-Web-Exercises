@@ -228,9 +228,43 @@ var numbers = [1.1, 2.2, 3.3, 4.4,5.5 ,6.6]
         // add the string "tumeric" onto the end of the vitamins array.
         // Recommend using the built-in JS operation to add to an array.
 
-
-        vitamins.push("tumeric");
+        vitamins.push("tumeric")
         console.log(vitamins)
+
+
+        // Exercise 7
+        // Given the array of numbers defined below, reverse the array of numbers that you created above.
+
+        var reversed = numbers.reverse();
+        console.log("reversed:", reversed);
+
+        // Exercise 8
+        // Sort the vitamins in alphabetical order. Recommend finding a way to sort the array with a built-in method
+
+        vitamins.sort();
+        console.log(vitamins)
+        // Exercise 9
+        // Write the code necessary to sort the sweets in reverse alphabetical order
+
+        sweets.sort();
+        sweets.reverse();
+        console.log(sweets);
+
+//Push-ups
+//         Create a function that takes a number a and finds the missing exponent x so that a when raised to the power of x is equal to b
+function solveForExp(a, b){
+    return Math.pow(a, b)
+
+}
+console.log(solveForExp(7, 2));
+
+        function solveForExp(a, b) {
+            var x=0;
+            while(Math.pow(a,x)!=b){
+                x++;
+            }
+            return x;
+        }
     </script>
 </body>
 </html>
