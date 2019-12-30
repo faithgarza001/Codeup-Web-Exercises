@@ -301,6 +301,12 @@ console.log(solveForExp(7, 2));
         var index = [12, 5, 8, 130, 44].indexOf(8);
         console.log("index is : " + index );
 
+        //Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+        function minMax(arr) {
+            arr.sort(function(a, b){return a-b});
+            return [arr[0], arr[arr.length-1]];
+
+        }
 
 
     </script>
