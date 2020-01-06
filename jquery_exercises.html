@@ -1,12 +1,23 @@
 <html lang="en">
-<!-- #1:   Create content in your HTML file using at least the following elements: h1, p, ul, li, div.-->
+<!-- #1: ('ID Selectors')  Create content in your HTML file using at least the following elements: h1, p, ul, li, div.-->
 <head>
     <meta charset="UTF-8">
     <title>jQuery Exercises</title>
 </head>
 <body>
-<!-- #2:  Add several attributes to your elements; you will need both id and class attributes.-->
+<!-- #2: ('Id Selectors')  Add several attributes to your elements; you will need both id and class attributes.-->
 <h1 class="happy">Happy New Year!</h1>
+
+<!--#2: ('Class selectors')Update your code so that at least 3 different elements have the same class named codeup.-->
+
+<div class ="img-container">
+    <img style="float: right; margin: 0px 0px 55px 55px;"><img src="img/amazing-animal-beautiful-beautifull.jpg" height="300" width="300" class="codeup"/>
+    <img style="float: right; margin: 0px 0px 55px 55px;"><img src="img/pexels-photo-2138922.jpeg" height="300" width="300" class="codeup"/>
+</div>
+<div class="img-contain">
+    <img style="float: right; margin: 0px 0px 55px 55px;"><img src="img/pexels-photo-414102.jpeg" height="300" width="300" class="codeup"/>
+    <img style="float: right; margin: 0px 0px 55px 55px;"><img src="img/pexels-photo-240514.jpeg" height="300" width="300" class="codeup"/>
+</div>
 
 <h1 class="new">New Year Resolutions</h1>
 
@@ -16,17 +27,17 @@
 <div class="separate">
 <ul id="resolutions">
 
-    <!-- #5 Use the same id on 2 elements. How does this change the jQuery selection? The syntax will change to $(#"odd");
-    Firstly, having duplicate id attributes within a single page is invalid as they must be unique. This is why only the first element was being affected by your events. Use a class instead-->
+    <!-- #5 ('Id selectors') Use the same id on 2 elements. How does this change the jQuery selection? The syntax will change to $(#"odd");
+    Having duplicate id attributes within a single page is invalid as they must be unique. This is why only the first element was being affected by your events. Use a class instead-->
 
-    <li id="odd">Meditate More</li>
+    <li id="one">Meditate More</li>
 
     <li id="even">Make new friends!</li>
 
-    <li id="odd">Build your own business!</li>
+    <li id="three">Build your own business!</li>
 </ul>
 </div>
-<form name="resForm" action="">
+<form id="filled" name="resForm" action="">
 
     First name:<br>
 
@@ -47,16 +58,75 @@
         $(document).ready(function() {
            // alert("Look, we are using jQuery!");
 
-            <!--#3:   Use jQuery to select an element by the id. Alert the contents of the element.-->
+            <!--#3:('Id selectors')   Use jQuery to select an element by the id. Alert the contents of the element.-->
             document.getElementById("button").addEventListener("click", function () {
                 alert("You clicked the button")
             });
             $("#even").css('color', 'red');
+            });
 
+
+        alert(jQuery("#three").html());
+//Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red*/
+
+
+     //Using jQuery, set the font-size of all li elements to 20px.*/
+
+        // $('.codeup').css("border", "1px solid red");
+
+        // $('li').css("font-size", "20px");
+
+       //Craft selectors that highlight all the h1, p, and li elements.*/
+
+        // $("h1, p, li").addclass("highlight");
+
+        // Remove your custom jQuery code from previous exercises.
+        //
+        //     Add jQuery code that will change the background color of an h1 element when clicked.
+        $("h1").click(function(){
+            $(this).css('background-color', 'red')})
+
+            .hover(function () {
+                $(this).css("color", "red")},
+            function () {
+                $(this).css("color", "black")
+            });
+
+        $("p").dblclick(function () {
+            $(this).css("font-size", "18px")
         });
+
+        $("li").mouseover(function () {
+            $(this).css("color", "red")
+        });
+
+        $("li").mouseout(function () {
+            $(this).css("color", "black")
+        });
+
+
+
+
+
+
+
+
+
+
+
+        //     Make all paragraphs have a font size of 18px when they are double clicked.
+        //
+        //     Set all li text color to red when the mouse is hovering; reset to black when it is not.
+
+
+
     })();
 </script>
+
+
 </body>
+
+
 </html>
 
 <!---$('#button").click(function(){
@@ -71,41 +141,18 @@ listItems[i].setAttribute('class','purple');
 
 
 
-<!--&lt;!&ndash;-jQuery $('.important').addClass('purple');&#45;&#45;&ndash;&gt;-->
-
-
-
-
-
-
-<!--Update the jQuery code to select and alert a different id.-->
-
-<!--Use the same id on 2 elements. How does this change the jQuery selection?-->
-
-<!--Remove the duplicate id. Each id should be unique on that page.-->
+<!---jQuery $('.important').addClass('purple');-->
 
 <!--Class Selectors-->
-
-<!--Remove your custom jQuery code from previous exercises.-->
-
-<!--Update your code so that at least 3 different elements have the same class named codeup.-->
-
-<!--Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.-->
-
-<!--Remove the class from one of the elements. Refresh and test that the border has been removed.-->
-
-<!--Give another element an id of codeup. Does this element get a border now?-->
 
 <!--Element Selectors-->
 
 <!--Remove your custom jQuery code from previous exercises.-->
-
-<!--Using jQuery, set the font-size of all li elements to 20px.-->
-
-<!--Craft selectors that highlight all the h1, p, and li elements.-->
 
 <!--Create a jQuery statement to alert the contents of your h1 element(s).-->
 
 <!--Multiple Selectors-->
 
 <!--Combine your selectors that highlight all the h1, p, and li elements.-->
+<!---$(".codeup").addClass("greenText").hover(function(){
+console.log("hover over);---->
