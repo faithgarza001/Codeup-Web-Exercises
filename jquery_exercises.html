@@ -1,30 +1,111 @@
 <html lang="en">
+<!-- #1:   Create content in your HTML file using at least the following elements: h1, p, ul, li, div.-->
 <head>
     <meta charset="UTF-8">
     <title>jQuery Exercises</title>
 </head>
 <body>
-<h1>Happy New Year!</h1>
-<h1>New Year Resolutions</h1>
+<!-- #2:  Add several attributes to your elements; you will need both id and class attributes.-->
+<h1 class="happy">Happy New Year!</h1>
+
+<h1 class="new">New Year Resolutions</h1>
+
+<p class="article">Welcome to the 2020 New Year, as we start the year off there are a few things to cover, let's start with New Year's resolutions!
+    As you take a look at your resolutions, remember to think realistically and create "mini-goals" in order to achieve greater goals!!
+</p>
+<div class="separate">
 <ul id="resolutions">
 
+    <!-- #5 Use the same id on 2 elements. How does this change the jQuery selection? The syntax will change to $(#"odd");
+    Firstly, having duplicate id attributes within a single page is invalid as they must be unique. This is why only the first element was being affected by your events. Use a class instead-->
+
+    <li id="odd">Meditate More</li>
+
+    <li id="even">Make new friends!</li>
+
+    <li id="odd">Build your own business!</li>
 </ul>
+</div>
 <form name="resForm" action="">
 
+    First name:<br>
+
+    <input type="text" name="firstname"><br>
+
+    Last name:<br>
+
+    <input type="text" name="lastname">
+
+    <input type="submit" value="Submit" id="button">
 </form>
+
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
 <script>
     (function () {
         "use strict";
         $(document).ready(function() {
            // alert("Look, we are using jQuery!");
+
+            <!--#3:   Use jQuery to select an element by the id. Alert the contents of the element.-->
             document.getElementById("button").addEventListener("click", function () {
-                alert("You clikced the button")
-            })
-            console.log($)
-            console.log(jQuery)
+                alert("You clicked the button")
+            });
+            $("#even").css('color', 'red');
+
         });
     })();
 </script>
 </body>
 </html>
+
+<!---$('#button").click(function(){
+alert('You clicked the button.')
+});---->
+<!----JavaScript----->
+<!----var listItems = document.getElementsByTagName('li');
+for(var i = 0; i<listItems.length;i++){
+listItems[i].setAttribute('class','purple');
+}-->
+
+
+
+
+<!--&lt;!&ndash;-jQuery $('.important').addClass('purple');&#45;&#45;&ndash;&gt;-->
+
+
+
+
+
+
+<!--Update the jQuery code to select and alert a different id.-->
+
+<!--Use the same id on 2 elements. How does this change the jQuery selection?-->
+
+<!--Remove the duplicate id. Each id should be unique on that page.-->
+
+<!--Class Selectors-->
+
+<!--Remove your custom jQuery code from previous exercises.-->
+
+<!--Update your code so that at least 3 different elements have the same class named codeup.-->
+
+<!--Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.-->
+
+<!--Remove the class from one of the elements. Refresh and test that the border has been removed.-->
+
+<!--Give another element an id of codeup. Does this element get a border now?-->
+
+<!--Element Selectors-->
+
+<!--Remove your custom jQuery code from previous exercises.-->
+
+<!--Using jQuery, set the font-size of all li elements to 20px.-->
+
+<!--Craft selectors that highlight all the h1, p, and li elements.-->
+
+<!--Create a jQuery statement to alert the contents of your h1 element(s).-->
+
+<!--Multiple Selectors-->
+
+<!--Combine your selectors that highlight all the h1, p, and li elements.-->
