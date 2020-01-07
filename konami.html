@@ -35,7 +35,69 @@
             var konamiCodePosition = 0;
 
 // add keydown event listener
-            document.addEventListener('keydown', function(e) {
+        $(document).keydown(function(e) {
+            if (e.keyCode == 38) {
+
+                var audio = new Audio('audio/Big-Rack-Tom.mp3');
+
+                audio.play();}
+
+                else {
+
+                    if (e.keyCode == 40) {
+
+                    var audio = new Audio('audio/Floor-Tom.mp3');
+
+                    audio.play();
+
+                } else { if (e.keyCode == 37) {
+
+                    var audio = new Audio('audio/Kick.mp3');
+
+                    audio.play();
+                    } else {
+
+                    if (e.keyCode == 39) {
+
+                            var audio = new Audio('audio/Crash.mp3');
+
+                            audio.play();
+
+                        } else { if (e.keyCode == 65) {
+
+                        var audio = new Audio('audio/Small-Rack-Tom.mp3');
+
+                        audio.play();
+                    } else {
+
+                            if (e.keyCode == 66) {
+
+                            var audio = new Audio('audio/Snare.mp3');
+
+                            audio.play();
+                        } else {
+
+                                if (e.keyCode == 13) {
+
+                                    var audio = new Audio('audio/Snare.mp3');
+
+                                    audio.play();
+                                     }
+                                 }
+
+                             }
+
+                        }
+
+                    }
+
+                }
+            }
+
+        }),
+
+
+            document.addEventListener('keydown', function (e) {
                 // get the value of the key code from the key map
                 var key = allowedKeys[e.keyCode];
                 // get the value of the required key from the konami code
@@ -57,6 +119,7 @@
                 }
             });
 
+
             function activateCheats() {
                 document.body.style.backgroundImage = "url('img/sonic.jpg')";
                 document.body.style.backgroundSize = '100%';
@@ -65,6 +128,9 @@
 
                 // alert("cheats activated");
             }
+
+
+
 
 </script>
 </body>
