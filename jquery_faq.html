@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+    <style>
+        a:active {
+            background-color: yellow;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="myDIV">
+    <h3> Would you like to register for our news letter?</h3>
+    <span>x</span>
+</div>
+
+
+
+<h3>National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+    <li class ='red'>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li class="yellow">Enchanted Rock</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li class="blue">Enchanted Rock</li>
+</ul>
+<button id="addNewColor">Submit</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+    $(document).ready(function() {
+        $("button").click(function () {
+            $("li").each(function () {
+                alert($(this).text())
+            });
+        });
+
+        $("span").click(function(){
+            $("h3").toggle();
+        });
+
+
+
+    });
+
+
+</script>
+</body>
+</html>
