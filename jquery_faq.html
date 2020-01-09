@@ -9,15 +9,19 @@
         }
 
 
+
+
     </style>
 </head>
 <body>
-<div id="myDIV">
-    <h3> Would you like to register for our news letter?</h3>
-    <span>x</span>
+
+<div id="newsletter">
+    <span id="xxx">x</span>
+    <h1> Would you like to register for our news letter?</h1>
+
 </div>
 
-
+<h2 id="register">Register for this site</h2>
 
 <h3>National Parks</h3>
 <ul id="national-parks">
@@ -55,9 +59,18 @@
             });
         });
 
-        $("span").click(function(){
-            $("h3").toggle();
+        $("#xxx").click(function(){
+            $("#newsletter").hide();
         });
+
+        $('h3').click(function(){
+           $(this).next().children().slideToggle();
+        });
+
+        $("#register").hide (function(){
+            $("#register").slideUp(8000).show(8000);
+        });
+
 
 
 
