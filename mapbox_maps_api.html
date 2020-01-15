@@ -1,264 +1,264 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>First Mapbox Map</title>-->
-<!--    &lt;!&ndash; Mapbox CSS &ndash;&gt;-->
-<!--    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />-->
-<!--    &lt;!&ndash; Custom CSS &ndash;&gt;-->
-<!--    <style>-->
-<!--        #map {-->
-<!--            /* the width and height may be set to any size */-->
-<!--            width: 100%;-->
-<!--            height: 700px;-->
-<!--        }-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
 
-<!--    </style>-->
-<!--</head>-->
-<!--<body>-->
+    </style>
+</head>
+<body>
 
-<!--<h1>My First Mapbox Map!</h1>-->
+<h1>My First Mapbox Map!</h1>
 
-<!--&lt;!&ndash; The HTML element that serves as the Mapbox container &ndash;&gt;-->
-
-
-
-
-
-<!--<div id='map'></div>-->
-
-<!--&lt;!&ndash; Mapbox JS &ndash;&gt;-->
-<!--<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>-->
-<!--<script src="js/keyss.js"></script>-->
-
-<!--&lt;!&ndash;<script src="js/mapbox-geocoder-utils.js"></script>&ndash;&gt;-->
-<!--&lt;!&ndash;<script src="js/mapbox-lec.js"></script>&ndash;&gt;-->
-<!--&lt;!&ndash; Custom JS &ndash;&gt;-->
-
-<!--<script>-->
-
-<!--    mapboxgl.accessToken = mapboxToken;-->
-
-<!--    var map = new mapboxgl.Map({-->
-<!--        container: 'map',-->
-<!--        style: 'mapbox://styles/mapbox/streets-v9',-->
-<!--        zoom: 10,-->
-<!--        center: [-98.4916, 29.4252]-->
-<!--    });-->
-
-
-<!--    function geocode(search, token) {-->
-<!--        var baseUrl = 'https://api.mapbox.com';-->
-<!--        var endPoint = '/geocoding/v5/mapbox.places/';-->
-<!--        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)-->
-<!--            .then(function(res) {-->
-<!--                return res.json();-->
-<!--                // to get all the data from the request, comment out the following three lines...-->
-<!--            }).then(function(data) {-->
-<!--                return data.features[0].center;-->
-<!--            });-->
-<!--    }-->
-
-
-
-
-<!--                                /////////////////:)GeoCode Starts Here/////////////-->
-<!--    function geocode(search, token) {-->
-<!--        var baseUrl = 'https://api.mapbox.com';-->
-<!--        var endPoint = '/geocoding/v5/mapbox.places/';-->
-<!--        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)-->
-<!--            .then(function(res) {-->
-<!--                return res.json();-->
-<!--                // to get all the data from the request, comment out the following three lines...-->
-<!--            }).then(function(data) {-->
-<!--                return data.features[0].center;-->
-<!--            });-->
-<!--    }-->
-
-<!--    geocode("313 E Houston St, San Antonio, TX 78205", mapboxToken).then(function (results) {-->
-<!--        console.log(results);-->
-<!--        //recenter the map//-->
-<!--        // add a marker//-->
-<!--        map.setCenter(results)-->
-<!--        map.setZoom(11)-->
-<!--        var markerOptions = {-->
-<!--            color: "#ff0000",-->
-<!--            draggable: true-->
-<!--        }-->
-<!--        var marker = new mapboxgl.Marker(markerOptions)//have to pass in marker options//-->
-<!--            .setLngLat(results)-->
-<!--            .addTo(map);-->
-<!--        var texasPopup = new mapboxgl.Popup()-->
-<!--            .setHTML("<h1><em>Texas de Brazil</em></h1>" + "<ul><li>TEXAS DE BRAZIL HAPPY HOUR. Monday through Friday from 4:30pm to 6:00pm at most locations</li><li>Signature Dish:Herb-Marinated Pork Loin.\n" +-->
-<!--                "Picanha.\n" +-->
-<!--                "Brazilian Sausage.\n" +-->
-<!--                "Leg of Lamb.\n" +-->
-<!--                "Chicken Breast Wrapped in Bacon.\n" +-->
-<!--                "Alcatra.\n" +-->
-<!--                "Lamb Chops.\n" +-->
-<!--                "Filet Mignon Wrapped in Bacon.</li>")-->
-<!--            .addTo(marker)-->
-<!--        marker.setPopup(texasPopup)//binding popup and marker//-->
-<!--    })-->
-
-<!--    geocode("60 NE Interstate 410 Loop, San Antonio, TX 78216", mapboxToken).then(function (results) {-->
-<!--        console.log(results);-->
-<!--        //recenter the map//-->
-<!--        // add a marker//-->
-<!--        map.setCenter(results)-->
-<!--        map.setZoom(11)-->
-<!--        var markerOptions = {-->
-<!--            color: "#ff0000",-->
-<!--            draggable: true-->
-<!--        }-->
-<!--        var marker = new mapboxgl.Marker(markerOptions)//have to pass in marker options//-->
-<!--            .setLngLat(results)-->
-<!--            .addTo(map);-->
-<!--        var saltyPopup = new mapboxgl.Popup()-->
-<!--            .setHTML("<h1><em>Saltgrass</em></h1>" + "<ul><li>Happy Hour Drinks MONDAY - THURSDAY 3PM - 7PM</li><li>Signature Dish Favorites:Two-Fork CheeseCake</li><li>homemade beer bread</li>")-->
-<!--            .addTo(marker)-->
-<!--        marker.setPopup(saltyPopup)//binding popup and marker//-->
-<!--    })-->
-
-<!--    geocode("7403 Northwest Loop 410, San Antonio, TX 78245", mapboxToken).then(function (results) {-->
-<!--        console.log(results);-->
-<!--        //recenter the map//-->
-<!--        // add a marker//-->
-<!--        map.setCenter(results)-->
-<!--        map.setZoom(11)-->
-<!--        var markerOptions = {-->
-<!--            color: "#ff0000",-->
-<!--            draggable: true-->
-<!--        }-->
-<!--        var marker = new mapboxgl.Marker(markerOptions)//have to pass in marker options//-->
-<!--            .setLngLat(results)-->
-<!--            .addTo(map);-->
-<!--        var cheddarPopup = new mapboxgl.Popup()-->
-<!--            .setHTML("<h1><em>Cheddar's</em></h1>" + "<ul><li>Cheddars Happy Hour runs from Mondays through to Fridays and is available from 4pm till 7pm.</li><li>Signature items: Bourbon bacon-wrapped shrimp.</li>")-->
-<!--            .addTo(marker)-->
-<!--        marker.setPopup(cheddarPopup)//binding popup and marker//-->
-<!--    })-->
+<!-- The HTML element that serves as the Mapbox container -->
 
 
 
 
 
-<!--    var goodEats = [{-->
-<!--        name: "Texas de Brazil",-->
-<!--        location: [-98.489085, 29.426627],-->
-<!--        HappyHour: "TEXAS DE BRAZIL HAPPY HOUR. Monday through Friday from 4:30pm to 6:00pm at most locations"-->
+<div id='map'></div>
 
-<!--    },-->
-<!--        {-->
-<!--            name: "Saltgrass",-->
-<!--            location: [-98.636528, 29.44665],-->
-<!--            HappyHour:  "Happy Hour - Saltgrass Steak House. San Antonio Drink Special HAPPY HOUR DRINKS MONDAY - THURSDAY 3PM - 7PM"-->
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/keyss.js"></script>
 
-<!--        },-->
-<!--        {-->
-<!--            name: "Cheddar",-->
-<!--            location: [-98.5, 29.52],-->
-<!--            HappyHour: " Cheddars Happy Hour runs from Mondays through to Fridays and is available from 4pm till 7pm."-->
+<!--<script src="js/mapbox-geocoder-utils.js"></script>-->
+<!--<script src="js/mapbox-lec.js"></script>-->
+<!-- Custom JS -->
 
-<!--        },-->
+<script>
 
+    mapboxgl.accessToken = mapboxToken;
 
-<!--    ];-->
-
-<!--function iterate(item){-->
-<!--    console.log(item);-->
-<!--}-->
-<!--goodEats.forEach(iterate);-->
-
-<!--//line70-92 zoom/reset ... instructor github-->
-
-<!--    //domform.html-->
-<!--    //keep buttons outside of the form on coffee project-->
-<!--    //document.forms-allows see forms added-->
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-98.4916, 29.4252]
+    });
 
 
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->
+    function geocode(search, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+                return res.json();
+                // to get all the data from the request, comment out the following three lines...
+            }).then(function(data) {
+                return data.features[0].center;
+            });
+    }
+
+
+
+
+                                /////////////////:)GeoCode Starts Here/////////////
+    function geocode(search, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+                return res.json();
+                // to get all the data from the request, comment out the following three lines...
+            }).then(function(data) {
+                return data.features[0].center;
+            });
+    }
+
+    geocode("313 E Houston St, San Antonio, TX 78205", mapboxToken).then(function (results) {
+        console.log(results);
+        //recenter the map//
+        // add a marker//
+        map.setCenter(results)
+        map.setZoom(11)
+        var markerOptions = {
+            color: "#ff0000",
+            draggable: true
+        }
+        var marker = new mapboxgl.Marker(markerOptions)//have to pass in marker options//
+            .setLngLat(results)
+            .addTo(map);
+        var texasPopup = new mapboxgl.Popup()
+            .setHTML("<h1><em>Texas de Brazil</em></h1>" + "<ul><li>TEXAS DE BRAZIL HAPPY HOUR. Monday through Friday from 4:30pm to 6:00pm at most locations</li><li>Signature Dish:Herb-Marinated Pork Loin.\n" +
+                "Picanha.\n" +
+                "Brazilian Sausage.\n" +
+                "Leg of Lamb.\n" +
+                "Chicken Breast Wrapped in Bacon.\n" +
+                "Alcatra.\n" +
+                "Lamb Chops.\n" +
+                "Filet Mignon Wrapped in Bacon.</li>")
+            .addTo(marker)
+        marker.setPopup(texasPopup)//binding popup and marker//
+    })
+
+    geocode("60 NE Interstate 410 Loop, San Antonio, TX 78216", mapboxToken).then(function (results) {
+        console.log(results);
+        //recenter the map//
+        // add a marker//
+        map.setCenter(results)
+        map.setZoom(11)
+        var markerOptions = {
+            color: "#ff0000",
+            draggable: true
+        }
+        var marker = new mapboxgl.Marker(markerOptions)//have to pass in marker options//
+            .setLngLat(results)
+            .addTo(map);
+        var saltyPopup = new mapboxgl.Popup()
+            .setHTML("<h1><em>Saltgrass</em></h1>" + "<ul><li>Happy Hour Drinks MONDAY - THURSDAY 3PM - 7PM</li><li>Signature Dish Favorites:Two-Fork CheeseCake</li><li>homemade beer bread</li>")
+            .addTo(marker)
+        marker.setPopup(saltyPopup)//binding popup and marker//
+    })
+
+    geocode("7403 Northwest Loop 410, San Antonio, TX 78245", mapboxToken).then(function (results) {
+        console.log(results);
+        //recenter the map//
+        // add a marker//
+        map.setCenter(results)
+        map.setZoom(11)
+        var markerOptions = {
+            color: "#ff0000",
+            draggable: true
+        }
+        var marker = new mapboxgl.Marker(markerOptions)//have to pass in marker options//
+            .setLngLat(results)
+            .addTo(map);
+        var cheddarPopup = new mapboxgl.Popup()
+            .setHTML("<h1><em>Cheddar's</em></h1>" + "<ul><li>Cheddars Happy Hour runs from Mondays through to Fridays and is available from 4pm till 7pm.</li><li>Signature items: Bourbon bacon-wrapped shrimp.</li>")
+            .addTo(marker)
+        marker.setPopup(cheddarPopup)//binding popup and marker//
+    })
+
+
+
+
+
+    var goodEats = [{
+        name: "Texas de Brazil",
+        location: [-98.489085, 29.426627],
+        HappyHour: "TEXAS DE BRAZIL HAPPY HOUR. Monday through Friday from 4:30pm to 6:00pm at most locations"
+
+    },
+        {
+            name: "Saltgrass",
+            location: [-98.636528, 29.44665],
+            HappyHour:  "Happy Hour - Saltgrass Steak House. San Antonio Drink Special HAPPY HOUR DRINKS MONDAY - THURSDAY 3PM - 7PM"
+
+        },
+        {
+            name: "Cheddar",
+            location: [-98.5, 29.52],
+            HappyHour: " Cheddars Happy Hour runs from Mondays through to Fridays and is available from 4pm till 7pm."
+
+        },
+
+
+    ];
+
+function iterate(item){
+    console.log(item);
+}
+goodEats.forEach(iterate);
+
+//line70-92 zoom/reset ... instructor github
+
+    //domform.html
+    //keep buttons outside of the form on coffee project
+    //document.forms-allows see forms added
+
+
+</script>
+</body>
+</html>
 <!-------------------------THE ABOVE CODE IS YOUR MAP PROJECT--------------------------------------------------->
 
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>DOM</title>
-    <style>
-        .redBackground {
-            background-color:red
-        }
-        .greenText {
-            color:green
-        }
-        .purple {
-            background:purple;
-        }
-        .cyan {
-            color:cyan;
-        }
-    </style>
-</head>
-<body>
-<h1 id="header">Happy Holidays</h1>
-<h3>Wish List</h3>
-<ul id="wishList">
-</ul>
-<form name="giftForm" action="">
-    <div>
-        <label for="gift">What do you want for Christmas?</label>
-        <input id="gift" name="gift" type="text">
-    </div>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>DOM</title>-->
+<!--    <style>-->
+<!--        .redBackground {-->
+<!--            background-color:red-->
+<!--        }-->
+<!--        .greenText {-->
+<!--            color:green-->
+<!--        }-->
+<!--        .purple {-->
+<!--            background:purple;-->
+<!--        }-->
+<!--        .cyan {-->
+<!--            color:cyan;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 id="header">Happy Holidays</h1>-->
+<!--<h3>Wish List</h3>-->
+<!--<ul id="wishList">-->
+<!--</ul>-->
+<!--<form name="giftForm" action="">-->
+<!--    <div>-->
+<!--        <label for="gift">What do you want for Christmas?</label>-->
+<!--        <input id="gift" name="gift" type="text">-->
+<!--    </div>-->
 
-</form>
-<button id="button" class="cyan">Click Me!</button>
-<script>
-    var gifts = ["plant", "necktie", "socks", "pony"];
-    var button = document.getElementById("button");
-    button.addEventListener("click",addGift);
-    function addGift() {
-        // var gift = document.forms.giftForm.gift.value;
-        var gift = document.getElementById("gift").value;
-        gifts.push(gift);
-        renderWishList(); // wipes out wish list, refills it with gifts array
-        document.getElementById("gift").value = "";
-    }
-    function renderWishList() {
-        var giftString = "";
-        gifts.forEach(function(gift) {
-            giftString += "<li>" + gift + "</li>";
-        });
-        document.getElementById("wishList").innerHTML = giftString;
-    }
-    renderWishList();
-    // The following is to toggle a class on the button
-    button.addEventListener("mouseover", function(){
-        toggleClass(button, "purple");
-    })
-    button.addEventListener("mouseout", function(){
-        toggleClass(button, "purple");
-    })
-    function toggleClass(element, classy) {
-        var elementClasses = element.getAttribute("class");
-        if (elementClasses.includes(classy))
-            removeClass(element, classy);
-        else
-            addClass(element, classy);
-    }
-    function addClass(element, classy) {
-        element.setAttribute("class", element.getAttribute("class") + " " + classy);
-    }
-    function removeClass(element, classy){
-        var elementClasses = element.getAttribute("class").split(" ");
-        elementClasses[elementClasses.indexOf(classy)] = "";
-        element.setAttribute("class", elementClasses.join(" "))
-    }
-</script>
-</body>
-</html>
+<!--</form>-->
+<!--<button id="button" class="cyan">Click Me!</button>-->
+<!--<script>-->
+<!--    var gifts = ["plant", "necktie", "socks", "pony"];-->
+<!--    var button = document.getElementById("button");-->
+<!--    button.addEventListener("click",addGift);-->
+<!--    function addGift() {-->
+<!--        // var gift = document.forms.giftForm.gift.value;-->
+<!--        var gift = document.getElementById("gift").value;-->
+<!--        gifts.push(gift);-->
+<!--        renderWishList(); // wipes out wish list, refills it with gifts array-->
+<!--        document.getElementById("gift").value = "";-->
+<!--    }-->
+<!--    function renderWishList() {-->
+<!--        var giftString = "";-->
+<!--        gifts.forEach(function(gift) {-->
+<!--            giftString += "<li>" + gift + "</li>";-->
+<!--        });-->
+<!--        document.getElementById("wishList").innerHTML = giftString;-->
+<!--    }-->
+<!--    renderWishList();-->
+<!--    // The following is to toggle a class on the button-->
+<!--    button.addEventListener("mouseover", function(){-->
+<!--        toggleClass(button, "purple");-->
+<!--    })-->
+<!--    button.addEventListener("mouseout", function(){-->
+<!--        toggleClass(button, "purple");-->
+<!--    })-->
+<!--    function toggleClass(element, classy) {-->
+<!--        var elementClasses = element.getAttribute("class");-->
+<!--        if (elementClasses.includes(classy))-->
+<!--            removeClass(element, classy);-->
+<!--        else-->
+<!--            addClass(element, classy);-->
+<!--    }-->
+<!--    function addClass(element, classy) {-->
+<!--        element.setAttribute("class", element.getAttribute("class") + " " + classy);-->
+<!--    }-->
+<!--    function removeClass(element, classy){-->
+<!--        var elementClasses = element.getAttribute("class").split(" ");-->
+<!--        elementClasses[elementClasses.indexOf(classy)] = "";-->
+<!--        element.setAttribute("class", elementClasses.join(" "))-->
+<!--    }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

@@ -21,7 +21,7 @@
 </button>
 
 
-
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script>
     var el_up = document.getElementById("GFG_UP");
     var el_down = document.getElementById("GFG_DOWN");
@@ -37,6 +37,60 @@
         changeColor('yellow');
         el_down.innerHTML = "Background Color changed";
     }
+
+    $.ajax("https://swapi.co/api/people/1")
+    .done(function(obj){
+        console.log(obj.name);
+    });
+
+    function averageHeight(){
+
+        var total = 0;
+    var hamsters = [
+
+        {
+            name: "Hamtaro",
+            heightInMM: 86,
+            fur: ['orange', 'white'],
+            gender: "male",
+            dateOfBirth: "August 6"
+        } , {
+            name: "Bijou",
+            heightInMM: 75,
+            fur: ['white'],
+            gender: "female",
+            dateOfBirth: "July 10"
+        } , {
+            name: "Oxnard",
+            heightInMM: 100,
+            fur: ['grey', 'white'],
+            gender: "male",
+            dateOfBirth: "May 3"
+        } , {
+            name: "Boss",
+            heightInMM: 120,
+            fur: ['brown', 'white'],
+            gender: "male",
+            dateOfBirth: "Spetember 21"
+        } , {
+            name: "Snoozer",
+            heightInMM: 85,
+            fur: ['brown', 'white', "pink"],
+            gender: "male",
+            dateOfBirth: "January 14"
+        }
+    ];
+function averageHeight(arr){
+    for (var i=0; i< arr.length; i++){
+        total += arr[i].heightInMM
+    }
+    return total/arr.length
+}
+    }
+
+
+
+
 </script>
 </body>
 </html>
