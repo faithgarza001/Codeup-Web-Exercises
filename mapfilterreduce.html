@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>This is some text
+</p>
+<script>
+    let hamsters = [
+        {
+            name: "Hamtaro",
+            heightInMM: 86,
+            fur: ['orange', 'white'],
+            gender: "male",
+            dateOfBirth: "August 6"
+        } , {
+            name: "Bijou",
+            heightInMM: 75,
+            fur: ['white'],
+            gender: "female",
+            dateOfBirth: "July 10"
+        } , {
+            name: "Oxnard",
+            heightInMM: 100,
+            fur: ['grey', 'white'],
+            gender: "male",
+            dateOfBirth: "May 3"
+        } , {
+            name: "Boss",
+            heightInMM: 120,
+            fur: ['brown', 'white'],
+            gender: "male",
+            dateOfBirth: "Spetember 21"
+        } , {
+            name: "Snoozer",
+            heightInMM: 85,
+            fur: ['brown', 'white', "pink"],
+            gender: "male",
+            dateOfBirth: "January 14"
+        }
+    ];
+
+    let reindeer = [
+        {
+            name: "Donald",
+            age: 16,
+            isGold: true
+        },
+        {    name: "Rudolph",
+            age: 16,
+            isGold: true
+
+        },
+        {
+            name: "Rocket",
+            age: 16,
+            isGold: true
+        },
+        {
+            name: "Cupid",
+            age: 16,
+            isGold: true
+        }
+    ]
+
+    let reindeerNames = reindeer.map((deer) => {
+        return deer.name;
+    });
+    console.log(reindeerNames)
+
+    let furColors = hamsters.map(hamster => hamster.fur);
+    console.log(furColors);
+
+    // let furColors = [];
+    // hamsters.map(hamster => {
+    //     hamster.fur.map(color =>furColors.push(color) );
+    // });
+    console.log(furColors);
+
+    let goldReindeer = reindeer.filter(deer => deer.isGold)
+    console.log(goldReindeer);
+
+//Reduce takes the function first you must build something up then reduce it to where you want
+let totalHansterHeight = hamsters.reduce((hamsterStack, hamster) => {
+    return hamsterStack + hamster.heightInMM;
+}, 0);
+ let hamsterStack = 0;
+ for (let hamster of hamsters) {
+     hamsterStack += hamster.heightInMM;
+ }
+
+console.log(totalHansterHeight);
+ console.log(hamsterStack);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

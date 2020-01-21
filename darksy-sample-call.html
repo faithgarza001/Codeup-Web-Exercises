@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <meta charset="UTF-8">
+    <head>
     <title>Dark SKy Call</title>
 
     <style>
@@ -9,11 +9,18 @@
             background-color: lightgray;
             border: 1px solid gray;
             text-align: center;
+
         }
         .mainBackground{
-            background-color: lavender;
+            background:url("img/2af73dce5bf5784143ac65a7b793c2f2.jpg");
+            background-size:100% 100%;
+
         }
+
+
+
         body{
+
             display: grid;
             grid-template-areas:
                 "header header header"
@@ -32,21 +39,14 @@
         #header2{
             grid-area: header2;
                  }
-        #current_weather{
-            grid-area: current_weather;
-        }
-        #tomorrows_weather{
-            grid-area: tomorrows_weather;
-        }
-        #day_after{
-            grid-area: day_after;
-        }
+
 
         #map{
             display: flex;
             justify-content: center;
             height: 400px;
-            width: 800px;
+            width: 600px;
+            margin: 5em;
         }
 
         #header{
@@ -57,34 +57,127 @@
 
         }
 
+
+        #current_weather, #tomorrows_weather, #day_after {
+           /*display: flex;*/
+           /*justify-content: space-between;*/
+            text-align: center;
+            border-radius: 3px;
+            text-decoration: none;
+            font-family: system-ui;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #fff;
+            background-image: linear-gradient(-45deg, #f761a1 0, #8c1bab 100%);
+
+            /*box-shadow: 0 3px 13px 0 rgba(14, 9, 73, 0.2),*/
+            /*0 11px 21px 0 rgba(255, 166, 220, 0.004);*/
+        }
+
+        .swing, .swing1, .swing2 {
+            animation: swing ease-in-out 1s infinite alternate;
+            transform-origin: center -20px;
+            float:left;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+        }
+        /*.swing img {*/
+        /*    border: 5px solid #f8f8f8;*/
+        /*    display: block;*/
+        /*}*/
+
+
+
+        @keyframes swing {
+            0% { transform: rotate(5deg); }
+            100% { transform: rotate(-3deg); }
+        }
+
+        h1 {
+            text-decoration: #8c1bab;
+            text-shadow: 2px 2px 4px #000;
+            position: relative;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            font-size: 2em;
+            letter-spacing: 4px;
+            overflow: hidden;
+            background: linear-gradient(90deg, #000, #fff, #000);
+            background-repeat: no-repeat;
+            background-size: 80%;
+            animation: animate 3s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: -500%;
+            }
+            100% {
+                background-position: 500%;
+            }
+        }
+        h3 { color: darkorchid;
+            font: bolder 12vw 'Alfa Slab One';
+            animation: glow 3s infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px white;
+            }
+
+            15% {
+                text-shadow: 2px 2px 10px rgba(255, 255, 255, 1),
+                -2px -2px 10px rgba(255, 255, 255, 1);
+            }
+            30% {
+                text-shadow: 2px 2px 4px rgba(255, 255, 255, .7),
+                -2px -2px 4px rgba(255, 255, 255, .7);
+            }
+            50% {
+                text-shadow: 20px 20px 50px rgba(255, 255, 255, .5),
+                -20px -20px 50px rgba(255, 255, 255, .5);
+            }
+        }
+
+
+
+
+
+
+
+
     </style>
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <!--    <script type='text/javascript' src='https://darksky.net/widget/default/42.360082,-71.05888/us12/en.js?height=500&title=Full Forecast&textColor=333333&bgColor=FFFFFF&skyColor=333&fontFamily=Default&units=us&htColor=333333&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>-->
 </head>
 
 <body class="mainBackground">
 
-<h1 id="header">Weather Applications</h1>
 
+<h1 id="header" class = >Weather Updates</h1>
 <h3 id="header2">San Antonio</h3>
 
 
 
-
-<div class="Today-weather weatherCards" id="current_weather"></div>
-
-<div class="Tomorrow-weather weatherCards" id="tomorrows_weather"></div>
-
-<div class="Next-weather weatherCards" id="day_after"></div>
-
+<figure class = "swing">
+<div class="Today-weather weatherCards-flex-col justify-content-center" id="current_weather" ></div>
+</figure>
+<figure class = "swing1">
+<div class="Tomorrow-weather weatherCards-flex-col justify-content-center" id="tomorrows_weather"></div>
+</figure>
+<figure class = "swing2">
+<div class="Next-weather weatherCards-flex-col justify-content-center" id="day_after"></div>
+</figure>
 
 
 <form>
-    Latitude:<br>
+    <p style=" color: white"> Latitude:</p>
 
     <input type="text" name="latitude" placeholder="Enter Latitude Here" id="lat"><br>
 
-    Longitude:<br>
+    <p style="color: white"> Longitude:</p>
 
     <input type="text" name="longitude" placeholder="Enter Longitude Here" id="long">
     <br>
@@ -97,6 +190,7 @@
 <div id ='map'>
 
 </div>
+
 <!-----DOM Code------>
 <script>
 
@@ -113,6 +207,25 @@
 
 
 </script>
+<!----popMotion----->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!--    <div id="stuff"></div>-->
@@ -137,20 +250,24 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!---POPMOTION SCRIPT BELOW------>
+<!--<script src="node_modules/@popmotion/easing/lib/index.js"></script>-->
 
 <script>
+
+
     // (function () {
     var weatherType = {
-        "clear-day":"img/Cloud-Drizzle-Sun-Alt.svg",
-        "clear-night":"img/Cloud-Fog.svg",
-        "rain":"img/Sun.svg",
-        "snow":"img/Cloud-Sun.svg",
-        "sleet":"img/Cloud-Fog.svg",
-        "wind":"img/Cloud-Rain-Alt.svg",
-        "fog":"img/Cloud-Refresh.svg",
-        "cloudy":"img/Cloud-Snow-Sun.svg",
-        "partly-cloudy-day":"img/Sun.svg",
-        "partly-cloudy-night":"img/Moon.svg"};
+        "clear-day":"img/animated-sun-image-0334.gif",
+        "clear-night":"img/animated-gifs-weather-37.gif",
+        "rain":"img/animated-weather-image-0100.gif",
+        "snow":"img/animated-gifs-weather-37.gif",
+        "sleet":"img/animated-gifs-weather-37.gif",
+        "wind":"img/animated-weather-image-0031.gif",
+        "fog":"img/animated-weather-image-0031.gif",
+        "cloudy":"img/animated-weather-image-0031.giff",
+        "partly-cloudy-day":"img/animated-weather-image-0031.gif",
+        "partly-cloudy-night":"img/animated-weather-image-0031.gif"};
 
 
     "use strict";
@@ -230,7 +347,32 @@
                 });
                 getWeather(lat.value, long.value);
             });
+            //
 
+            // mapboxgl.accessToken = mapboxToken;
+            // var coordinates = document.getElementById('coordinates');
+            // var map = new mapboxgl.Map({
+            //     container: 'map',
+            //     center: [0, 0],
+            //     zoom: 2
+            // });
+            //
+            //
+            //
+            // var marker = new mapboxgl.Marker({
+            //     draggable: true
+            // })
+            //     .setLngLat([0, 0])
+            //     .addTo(map);
+            //
+            // function onDragEnd() {
+            //     var lngLat = marker.getLngLat();
+            //     // coordinates.style.display = 'block';
+            //     coordinates.innerHTML =
+            //         'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+            // }
+            //
+            // marker.on('dragend', onDragEnd);
 
 
 
@@ -256,6 +398,5 @@
 
 
 </script>
-
 </body>
 </html>

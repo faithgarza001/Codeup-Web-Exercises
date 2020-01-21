@@ -53,7 +53,60 @@
 
 
 <script>
+    // $(document).ready(function(){
+    //     "use strict";
 
+        // $('#change-bg-color').click(function () {
+        //     $('body').css('background', 'blue')
+        // });
+        //
+        // $('#append-to-ul').click(function () {
+        //     // my version of the answer:
+        //     // var listText = '<li>text</li>';
+        //     // $('#append-to-me').append(listText);
+        //     $('#append-to-me').append('<li>text</li>');
+        // });
+        //
+        // setTimeout(function(){
+        //     $('#message').text("Goodbye, World!");
+        // },2000);
+        //
+        // $('#hl-toggle li').click(function () {
+        //     $(this).toggleClass('highlighted');
+        // });
+
+//    my version
+$('#hl-toggle').children().click(function () {
+    $(this).toggleClass('highlighted');
+});
+
+        // $('#upcase-name').click(function () {
+        //     var message = "Your name uppercased is: ";
+        //     $('#output').text(message +$('#input').val().toUppercase())
+        // });
+
+//My version
+// $('#upcase-name').click(function () {
+//     $("#input").val(function(i,val) {
+//         var output = "Your name uppercased is: " + val.toUpperCase();
+//         $("#output").text(output);
+//     });
+// });
+//
+//         $('#six li').dblclick(function () {
+//             var doubleSize = parseInt($(this).css("font-size" * 2));
+//             $(this).css({'font-size' * doubleSize + 'px'});
+//         });
+        //my version
+// $('#font-grow').children().dblclick(function () {
+//     var fontSize = parseInt($(this).css("font-size"));
+//     fontSize = (fontSize * 2) + "px";
+//     $(this).css({'font-size':fontSize});
+// });
+
+    // });
+    // $(document).ready(function(){
+    //     "use strict";
 
         function chBackcolor(color) {
         document.body.style.background = color;
@@ -79,9 +132,9 @@
         document.getElementById("myList").appendChild(node);
     }
 
-        myVar = setTimeout(function(){
-            document.body.style.backgroundColor = "pink"
-        }, 3000);
+        // myVar = setTimeout(function(){
+        //     document.body.style.backgroundColor = "pink"
+        // }, 3000);
 
         var button = document.querySelector("button");
         var isColored = false;
@@ -94,23 +147,11 @@
             document.body.style.background = "blue";
             isColored = true;
         }
+        });
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    });
 
 
 
@@ -118,7 +159,7 @@
     // var myParagraph = document.getElementById( "id3" );
     // myParagraph.style.color = "blue";
     // myParagraph.style.fontSize = "30"
-
+    })();
 </script>
 </body>
 </html>

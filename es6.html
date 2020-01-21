@@ -1,0 +1,239 @@
+<!---<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-----The let statement allows you to declare a variable with block scope.---->
+<!----<script>
+//     let a = 50;
+//     let b = 100;
+//     if (true) {
+//         let a = 60;
+//         var c = 10;
+//         console.log(a/c); // 6
+//         console.log(b/c); // 10
+//     }
+//     console.log(c); // 10
+//     console.log(a); // 50
+//
+//     let NewOneWithParameters = (a, b) => {
+//         console.log(a+b); // 30
+//     };
+//     NewOneWithParameters(10, 20);
+//
+//     let NotWorkingFunction = (a = 10, b) => {
+//         return a + b;
+//     };
+//     NotWorkingFunction(20);
+//
+//     let arr = [2,3,4,1];
+//     for (let value of arr) {
+//         console.log(value);
+//     }
+//
+//     class People {
+//         constructor(name) {
+//             this.name = name;
+//         }
+//         get Name() {
+//             return this.name;
+//         }
+//         set Name(name) {
+//             this.name = name;
+//         }
+//     }
+//
+//
+//     let person = new People("Jon Snow");
+//
+//
+//     console.log(person.Name);
+//
+//
+//     person.Name = "Dany";
+//
+//
+//     console.log(person.Name);
+// /*Array.from() is a powerful method which converts array-like objects into real arrays. */
+//
+//     let titleELements = document.querySelectorAll(`article .title`)
+//     let titles = Array.from(titleELements).map (t => t.textContent);
+//     console.log(titles);
+//
+//
+//
+//
+//
+// /**Preloaded for you in this Kata is a class Animal:
+//  Task
+//  Define the following classes that inherit from Animal.
+//
+//  I. Shark
+//  The constructor function for Shark should accept 3 arguments in total in the following order: name, age, status. All sharks should have a leg count of
+//  II. Cat
+//  The constructor function for Cat should accept the same 3 arguments as with Shark: name, age, status. Cats should always have a leg count of 4 and a species of "cat".
+//
+//  Furthermore, the introduce/Introduce method for Cat should be identical to the original except there should be exactly 2 spaces and the words "Meow meow!" after the phrase. For example:
+//
+//  var example = new Cat("Example", 10, "Happy");
+//  example.introduce() === "Hello, my name is Example and I am 10 years old.  Meow meow!"; // Notice the TWO spaces - very important
+//  III. Dog
+//  The Dog constructor should accept 4 arguments in the specified order: name, age, status, master. master is the name of the dog's master which will be a string. Furthermore, dogs should have 4 legs and a species of "dog".
+//
+//  Dogs have an identical introduce/Introduce method as any other animal, but they have their own method called greetMaster/GreetMaster which accepts no arguments and returns "Hello (insert_master_name_here)" (of course not the literal string but replace the (insert_master_name_here) with the name of the dog's master).***/
+//
+//     class Animal {
+//         constructor(name, age, legs, species, status) {
+//             this.name = name;
+//             this.age = age;
+//             this.legs = legs;
+//             this.species = species;
+//             this.status = status;
+//         }
+//         introduce() {
+//             return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+//         }
+//     }
+//
+//
+//     class Shark extends Animal {
+//         constructor(name, age, status) {
+//             super(name, age, 0, "shark", status);
+//         }
+//     }
+//
+//     class Cat extends Animal {
+//         constructor(name, age, status) {
+//             super(name, age, 4, "cat", status);
+//         }
+//         introduce() {
+//             return `${super.introduce()}  Meow meow!`;
+//         }
+//     }
+//
+//     class Dog extends Animal {
+//         constructor(name, age, status, master) {
+//             super(name, age, 4, "dog", status);
+//             this.master = master;
+//         }
+//         greetMaster() {
+//             return `Hello ${this.master}`;
+//         }
+//     }
+// /*fizzBuzz es6*/
+
+/**const users = [
+    {
+        name: 'zach',
+        email: 'zach@codeup.com',
+        languages: ['javascript', 'bash']
+    },
+    {
+        name: 'ryan',
+        email: 'ryan@codeup.com',
+        languages: ['clojure', 'javascript']
+    },
+    {
+        name: 'luis',
+        email: 'luis@codeup.com',
+        languages: ['java', 'scala', 'php']
+    },
+    {
+        name: 'fernando',
+        email: 'fernando@codeup.com',
+        languages: ['java', 'php', 'sql']
+    },
+    {
+        name: 'justin',
+        email: 'justin@codeup.com',
+        languages: ['html', 'css', 'javascript', 'php']
+    }
+];
+
+// TODO: fill in your name and email and add some programming languages you know
+// to the languages array
+// TODO: replace the `var` keyword with `const`, then try to reassign a variable
+// declared as `const`
+let name = 'Faith_Garza';
+let email = 'faith.garza001@gmail.com';
+let languages = ['html', 'css', 'javascript'];
+let b = users.concat(name,email, languages);
+console.log(b);
+
+
+// TODO: rewrite the object literal using object property shorthand
+users.push({
+    name: name,
+    email: email,
+    languages: languages
+});
+
+// TODO: replace `var` with `let` in the following variable declarations
+var emails = [];
+var names = [];
+
+// TODO: rewrite the following using arrow functions
+// users.forEach(function(user) {
+//     return emails.push(user.email);
+// });
+// users.forEach(function(user) {
+//     return names.push(user.name);
+// });
+
+// TODO: replace `var` with `let` in the following declaration
+// var developers = [];
+// users.forEach(function(user) {
+    // TODO: rewrite the code below to use object destructuring assignment
+    //       note that you can also use destructuring assignment in the function
+    //       parameter definition
+    // const name = user.name;
+    // const email = user.email;
+    // const languages = user.languages;
+
+    // TODO: rewrite the assignment below to use template strings
+    developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
+});
+
+// TODO: Use `let` for the following variable
+// var list = '<ul>';
+
+// TODO: rewrite the following loop to use a for..of loop
+// developers.forEach(function (developer) {
+
+    // TODO: rewrite the assignment below to use template strings
+//     list += '<li>' + developer + '</li>';
+// });
+// list += '</ul>';
+
+/**old way* in which if you put the variables in a function you can't  just call them through the out the documuent the scope stays within the function always use const unless you want to reassign a variable it is good practice to use const*/
+/**var names = ["Ed1", "John","Mike"];
+var counter = 10;
+counter = 5;
+console.log(counter);
+/**New Way*/
+const list = [1, 2, 3, 4, 5];
+/for(let i = 0; i < list.length; i++){
+/    console.log(i)
+/** }*/
+/**the above code is bracket scope is better for catching errors*/
+/**console log string attach variable*/
+/**var name = "Ed";
+console.log("Hello my name is" + name);
+/**Es6 when using const you cannot reassign the variable */
+/**const name = `Ed`;
+console.log("Hello my name is $(")
+
+    const todoList = ['milk', 'cow'];
+/**whit let you still have global and functional scoping however you also have block scoping if you use a for loop
+ */
+/**for(let i = 0; i < list.length; i++){
+    console.log(i)
+
+
+</script>
+
+</body>
+</html>
+<!---Notes about es6----->

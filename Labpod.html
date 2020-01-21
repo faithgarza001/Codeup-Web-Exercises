@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1 id="here"> Your age Here</h1>
+
+
+<script>
+    let d = new Date();
+    document.body.innerHTML = "<h1>Today's date is for your purpose" + d + "</h1>";
+    //
+    // alert("Hello, World!");
+
+    /*Make a program that filters a list of strings and returns a list with only your friends name in it.*/
+    const friends = ["Ryan", "Kieran", "Jason", "Yous"];
+    function friend(friends){
+        return friends.filter(function (name){
+            return name.length === 4;
+        });
+    }
+    console.log(friend(friends));
+
+
+
+    /*Create a function that takes an array of objects (groceries) which calculates the total price and returns it as a number. A grocery object has a product, a quantity and a price, for example:*/
+
+    function getTotalPrice(g) {
+        return eval(g.reduce((total,product)=>{
+            return total + (product.quantity * product.price)
+        },0).toFixed(1))
+
+    }
+
+
+    let g =[
+        { product: "Milk", quantity: 1, price: 1.50 },
+        { product: "Cereals", quantity: 1, price: 2.50 }
+    ];
+
+    console.log(getTotalPrice(g));
+
+    /* Beginning of my JS crash course (Woohoo)
+    Functions should do multiple things and can also take in arguments. Every function should have some kind of input, this is the first thing that should be give to a function.
+    Example this is a simple function going to take in a name and returns hello followed by your name
+    Name: "Faith"
+    Return: Hello Faith*/
+
+    function greeting() {
+        let name = prompt("This is your name");
+        let result = "hello" + " " + name; //String Concat
+        console.log(result);
+    }
+    // greeting();
+
+    //How do arguments work in functions?
+
+    function sumNumbers(num1, num2){
+        let result = num1 + num2;
+        console.log(result);
+    }
+    sumNumbers(10, 10);
+    sumNumbers("Hello",  " Faith");
+
+    //while vs for loop
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
