@@ -64,7 +64,8 @@ img {
     transform-origin-y: 0%;
     color: rgb(255, 255, 255);}
 .item-1:nth-child(1) {
-     background: #F69A9A;}
+     background: #F69A9A;
+    }
 
 
 .item-2:nth-child(2) {
