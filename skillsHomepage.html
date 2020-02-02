@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Skills Homepage</title>
+    <link rel="stylesheet" href="CSS/new2.css">
+</head>
+<body>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+<div class="pen">
+    <ul class="sidepanel">
+        <li class="item-1">Games</li>
+
+        <li class="item-2">Customer Service</li>
+
+        <li class="item-3">Registration</li>
+
+        <li class="item-4">Test Driven Development</li>
+
+        <li class="item-5">Achievements</li>
+
+        <li class="item-6">About me</li>
+    </ul>
+</div>
+<script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>
+<script>
+    const { easing, tween } = popmotion;
+
+    const sidebarProps = {
+        initialPose: 'closed',
+        open: {
+            x: "0%",
+            delayChildren: 300,
+            staggerChildren: 50
+        },
+        closed: {
+            delay: 500,
+            staggerChildren: 20,
+            x: "-100%"
+        }
+    };
+
+    const itemProps = {
+        initialPose: 'closed',
+        open: {
+            opacity: 1,
+            y: 0,
+            transition: (props) => tween({
+                ...props,
+                duration: 500,
+                ease: props.key === 'opacity' ? easing.linear : easing.backOut
+            })
+        },
+        closed: {
+            opacity: 0,
+            // We're using `i`, but you can pass as many different vars as you wish
+            y: ({ i }) => i * 40
+        }
+    };
+
+    const sidebar = document.querySelector('.sidepanel')
+    const items = Array.from(sidebar.querySelectorAll('.item1'))
+
+    const sidebarPoser = pose(sidebar, sidebarProps)
+    items.forEach((item, i) => sidebarPoser.addChild(item, {
+        ...itemProps,
+        transitionProps: { i }
+    }))
+
+    sidebarPoser.set('open')
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
