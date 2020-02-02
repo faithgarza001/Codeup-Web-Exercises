@@ -2,9 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Animation Tutorial</title>
+    <link rel="stylesheet" href="CSS/new.css">
 </head>
 <body>
+
+<div class="container">
+        <div class="inner">
+        <h1>You can do anything!!</h1>
+        <p>Please, Never stop believing in yourself. Thanks</p>
+
+        <form>
+            <span class="msg">Full name please!</span>
+            <input type="text" placeholder="Name" class="txtfld">
+            <input type="text" placeholder="Email Address" class="txtfld">
+
+            <input type="button" value="Enter info" class="btn">
+
+
+
+        </form>
+        </div>
+     </div>
+        <script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>
+        <script>
+            const container = popmotion.styler(document.querySelector('.container'))//animation of elements
+            const formElements = (document.querySelector('.inner'))
+            const msgPop = popmotion.styler(document.querySelector('.msg'));
+
+       const myAnim = popmotion.tween({
+                from: {
+                    scale: .7,
+                    opacity: 0,
+                    y: -300
+                },
+                to: {
+                    scale: 1,
+                    opacity: 1,
+                    y: 0
+                },
+                duration: 1000
+            })
+
+            const myAnim2 = popmotion.keyframes({
+                values: [
+                    {y: -50, opacity: 0 },
+                    {y: -20, opacity: 1 },
+                    {y: -20, opacity: 1 },
+                    {y: 0, opacity: 0 },
+
+                ],
+                times: [0, .2, .8, 1],
+                duration: 3000
+            });
+
+            myAnim.start({
+                update: container.set,
+                complete: () => { myAnim2.start(msgPop.set); console.log('first anim done') }
+            });
+
+
+           //.start(container.set)
+
+            const stylers = Array
+                .from(formElements.children)//the following js is creating an Array and taking in all the elements
+                .map(popmotion.styler)
+
+            const animations = Arrays(stylers.length)
+                .fill(popmotion.spring({from: 100, to: 0 }))
+
+            popmotion.stagger(animations, 100)
+                .start((v) => v.forEach((x, i) => stylers[i].set('x', x)))
+
+        </script>
+
+
+
 
 </body>
 </html>
