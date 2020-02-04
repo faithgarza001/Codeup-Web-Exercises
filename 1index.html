@@ -20,7 +20,7 @@
             <input type="button" value="Contact me" class="btn">
 
             <span class="msg">Full name please!</span>
-            <input type="text" placeholder="Name" class="txtfld">
+            <input class="txtfld" placeholder="Name" type="text">
             <input type="text" placeholder="Email Address then click the Contact me button" class="txtfld">
 
 
@@ -30,7 +30,8 @@
         </form>
         </div>
      </div>
-        <script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>
+
+        <script src="node_modules/popmotion/dist/popmotion.global.min.js"></script>
         <script>
             const container = popmotion.styler(document.querySelector('.container'))//animation of elements
             const formElements = (document.querySelector('.inner'))
@@ -51,7 +52,7 @@
             });
 
 
-
+//put in calculations to calculate center of device instead of hard coding this simpler code
             const myAnim2 = popmotion.keyframes({
                 values: [
                     {y: -50, opacity: 0 },
@@ -74,10 +75,10 @@
 
             const stylers = Array
                 .from(formElements.children)//the following js is creating an Array and taking in all the elements
-                .map(popmotion.styler)
+                .map(popmotion.styler);
 
             const animations = Arrays(stylers.length)
-                .fill(popmotion.spring({from: 100, to: 0 }))
+                .fill(popmotion.spring({from: 100, to: 0 }));
 
             popmotion.stagger(animations, 100)
                 .start((v) => v.forEach((x, i) => stylers[i].set('x', x)))

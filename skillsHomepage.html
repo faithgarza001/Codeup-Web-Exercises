@@ -9,21 +9,25 @@
 </head>
 <body>
 
+
+
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
 <div class="pen">
+
     <ul class="sidepanel">
-        <button class="item-1">Games</button>
 
+        <button class="item-1" style="height: 50px; margin: 5px;">Games</button>
 
-        <button class="item-2">Customer Service</button>
+        <button class="item-2" style="height: 50px; margin: 5px;">Customer Service</button>
 
-        <button class="item-3">Registration</button>
+        <button class="item-3" style="height: 50px; margin: 5px;">Registration</button>
 
-        <button class="item-4">Test Driven Development</button>
+        <button class="item-4" style="height: 50px; margin: 5px;">Test Driven Development</button>
 
-        <button class="item-5">Achievements</button>
+        <button class="item-5" style="height: 50px; margin: 5px;">Speed Test</button>
 
-        <button class="item-6">About me</button>
+        <button class="item-6" style="height: 50px; margin: 5px;">Achievement</button>
     </ul>
 </div>
 <script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>
@@ -62,14 +66,14 @@
         }
     };
 
-    const sidebar = document.querySelector('.sidepanel')
-    const items = Array.from(sidebar.querySelectorAll('.item1'))
+    const sidebar = document.querySelector('.sidepanel');
+    const items = Array.from(sidebar.querySelectorAll('.item1'));
 
-    const sidebarPoser = pose(sidebar, sidebarProps)
+    const sidebarPoser = pose(sidebar, sidebarProps);
     items.forEach((item, i) => sidebarPoser.addChild(item, {
         ...itemProps,
         transitionProps: { i }
-    }))
+    }));
 
     sidebarPoser.set('open')
 
