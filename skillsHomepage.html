@@ -5,77 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Skills Homepage</title>
-    <link rel="stylesheet" href="CSS/new2.css">
+    <link rel="stylesheet" href="CSS/skills.css">
 </head>
 <body>
-
-
-
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
-<div class="pen">
-
-    <ul class="sidepanel">
-
-        <button class="item-1" style="height: 50px; margin: 5px;">Games</button>
-
-        <button class="item-2" style="height: 50px; margin: 5px;">Customer Service</button>
-
-        <button class="item-3" style="height: 50px; margin: 5px;">Registration</button>
-
-        <button class="item-4" style="height: 50px; margin: 5px;">Test Driven Development</button>
-
-        <button class="item-5" style="height: 50px; margin: 5px;">Speed Test</button>
-
-        <button class="item-6" style="height: 50px; margin: 5px;">Achievement</button>
-    </ul>
+<div id="slider" class="blended">
+    <div id="slider-wrapper">
+        <div class="slide">
+            <img src="http://lorempixel.com/960/300/sports" alt="" />
+            <p class="caption">Games</p>
+        </div>
+        <div class="slide">
+            <img src="http://lorempixel.com/960/300/business" alt="" />
+            <p class="caption">Applications</p>
+        </div>
+        <div class="slide">
+            <img src="http://lorempixel.com/960/300/animals" alt="" />
+            <p class="caption">Test Driven Development</p>
+        </div>
+        <div class="slide">
+            <img src="http://lorempixel.com/960/300/food" alt="" />
+            <p class="caption">Speed Test</p>
+        </div>
+        <div class="slide">
+            <img src="http://lorempixel.com/960/300/nature" alt="" />
+            <p class="caption">About Me</p>
+        </div>
+    </div>
+    <div id="slider-nav">
+        <a href="#" data-slide="0">🕹</a>
+        <a href="#" data-slide="1">&#9832;</a>
+        <a href="#" data-slide="2">&#9989;</a>
+        <a href="#" data-slide="3">&frac12;&excl;</a>
+        <a href="#" data-slide="4">&#9800;</a>
+    </div>
 </div>
+<script src="js/SkillsHomepage.js">
+    function Slider( element ) {
+        this.el = document.querySelector( element );
+        this.init();
+    }
+
+    Slider.prototype = {
+        init: function() {
+            this.links = this.el.querySelectorAll( "#slider-nav a" );
+            this.wrapper = this.el.querySelector( "#slider-wrapper" );
+            this.navigate();
+        },
+        navigate: function() {
+
+            for( var i = 0; i < this.links.length; ++i ) {
+                var link = this.links[i];
+                this.slide( link );
+            }
+        },
+
+        animate: function( slide ) {
+            var parent = slide.parentNode;
+            var caption = slide.querySelector( ".caption" );
+            var captions = parent.querySelectorAll( ".caption" );
+            for( var k = 0; k < captions.length; ++k ) {
+                var cap = captions[k];
+                if( cap !== caption ) {
+                    cap.classList.remove( "visible" );
+                }
+            }
+            caption.classList.add( "visible" );
+        },
+
+        slide: function( element ) {
+            var self = this;
+            element.addEventListener( "click", function( e ) {
+                e.preventDefault();
+                var a = this;
+                self.setCurrentLink( a );
+                var index = parseInt( a.getAttribute( "data-slide" ), 10 ) + 1;
+                var currentSlide = self.el.querySelector( ".slide:nth-child(" + index + ")" );
+
+                self.wrapper.style.left = "-" + currentSlide.offsetLeft + "px";
+                self.animate( currentSlide );
+
+            }, false);
+        },
+        setCurrentLink: function( link ) {
+            var parent = link.parentNode;
+            var a = parent.querySelectorAll( "a" );
+
+            link.className = "current";
+
+            for( var j = 0; j < a.length; ++j ) {
+                var cur = a[j];
+                if( cur !== link ) {
+                    cur.className = "";
+                }
+            }
+        }
+    };
+
+    document.addEventListener( "DOMContentLoaded", function() {
+        var aSlider = new Slider( "#slider" );
+
+    });
+
+
+
+
+
+
+</script>
 <script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>
 <script>
-    const { easing, tween } = popmotion;
 
-    const sidebarProps = {
-        initialPose: 'closed',
-        open: {
-            x: "0%",
-            delayChildren: 300,
-            staggerChildren: 50
-        },
-        closed: {
-            delay: 500,
-            staggerChildren: 20,
-            x: "-100%"
-        }
-    };
-
-    const itemProps = {
-        initialPose: 'closed',
-        open: {
-            opacity: 1,
-            y: 0,
-            transition: (props) => tween({
-                ...props,
-                duration: 500,
-                ease: props.key === 'opacity' ? easing.linear : easing.backOut
-            })
-        },
-        closed: {
-            opacity: 0,
-            // We're using `i`, but you can pass as many different vars as you wish
-            y: ({ i }) => i * 40
-        }
-    };
-
-    const sidebar = document.querySelector('.sidepanel');
-    const items = Array.from(sidebar.querySelectorAll('.item1'));
-
-    const sidebarPoser = pose(sidebar, sidebarProps);
-    items.forEach((item, i) => sidebarPoser.addChild(item, {
-        ...itemProps,
-        transitionProps: { i }
-    }));
-
-    sidebarPoser.set('open')
 
 
 

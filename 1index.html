@@ -6,10 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JavaScript Animation Tutorial</title>
     <link rel="stylesheet" href="CSS/new.css">
+
 </head>
 <body>
-
-<div class="container">
+    <div class="container1">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="border"></div>
+        <div class="border"></div>
+    </div>
+    <svg>
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic"
+                                stdDeviation="10"/>
+                <feColorMatrix in="name" mode='matrix'
+                               values="1 0 0 0 0
+                                       0 1 0 0 0
+                                       0 0 1 0 0
+                                       0 0 0 30 -15"/>
+                <feBlend in="SourceGraphic"/>
+            </filter>
+        </defs>
+    </svg>
+<script crossorigin src="react-animations/node_modules/"></script>
+<div class="container" style="width: 50%">
         <div class="inner">
         <h1>Welcome to my personal profile,<br> what would you <br> like to do?</h1>
         <p>Please, Never stop believing in yourself ! Thanks</p>
@@ -78,7 +112,7 @@
                 .map(popmotion.styler);
 
             const animations = Arrays(stylers.length)
-                .fill(popmotion.spring({from: 100, to: 0 }));
+                .fill(popmot.spring({from: 100, to: 0 }));
 
             popmotion.stagger(animations, 100)
                 .start((v) => v.forEach((x, i) => stylers[i].set('x', x)))
@@ -86,6 +120,7 @@
         </script>
 
 
+<!--<script src="react-animations/node_modules/"></script>-->
 
 
 </body>

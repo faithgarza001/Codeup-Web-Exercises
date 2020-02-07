@@ -40,3 +40,95 @@ p {color:gray;}
     color: #fff;
     opacity: 0;
 }
+html{
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh
+
+}
+
+.container1{
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    filter: url(#goo);
+}
+
+.particle {
+    width: 100px;
+    height: 100px;
+    top: -20%;
+    background-color: black;
+    position: absolute;
+    border-radius: 50%;
+    animation: fall 15s infinite;
+    filter: url(#goo);
+
+}
+
+    @keyframes fall {
+        0%{top: -20%}
+        20%{top: 0%}
+        80%{top: 85%}
+       100%{top: 100%}
+
+    }
+    .particle:nth-of-type(2n){
+        width: 60px;
+        height: 60px;
+}
+    .particle:nth-of-type(3n){
+        width: 120px;
+        height: 120px;
+    }
+    .particle:nth-of-type(1){
+    left: 30%;
+    animation-delay: 1s;
+}
+    .particle:nth-of-type(2) {
+    left: 60%;
+    animation-delay: 2s;
+}
+    .particle:nth-of-type(3) {
+    left: 25%;
+    animation-delay: 3s;
+}
+    .particle:nth-of-type(4) {
+    left: 75%;
+    animation-delay: 4s;
+}
+    .particle:nth-of-type(5){
+    left: 35%;
+    animation-delay: 1s;
+}
+    .particle:nth-of-type(6){
+    left: 56%;
+    animation-delay: 7s;
+}
+    .particle:nth-of-type(7){
+    left: 56%;
+    animation-delay: 7s;
+}
+
+    .border{
+        position: absolute;
+        background-color: black;
+        width: 100%; height: 10%;
+    }
+
+    .border:nth-last-of-type(1){
+        top: 0; left: 0;
+    }
+
+    .border:nth-last-of-type(1){
+    bottom: 0; left: 0;
+}
