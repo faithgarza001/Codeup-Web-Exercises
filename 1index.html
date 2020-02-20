@@ -9,6 +9,9 @@
 
 </head>
 <body>
+
+
+
     <div class="container1">
         <div class="particle"></div>
         <div class="particle"></div>
@@ -67,8 +70,8 @@
 
         <script src="node_modules/popmotion/dist/popmotion.global.min.js"></script>
         <script>
-            const container = popmotion.styler(document.querySelector('.container'))//animation of elements
-            const formElements = (document.querySelector('.inner'))
+            const container = popmotion.styler(document.querySelector('.container'));//animation of elements
+            const formElements = (document.querySelector('.inner'));
             const msgPop = popmotion.styler(document.querySelector('.msg'));
             const buttonColor = popmotion.styler(document.querySelector('.btn'));
        const myAnim = popmotion.tween({
@@ -116,6 +119,15 @@
 
             popmotion.stagger(animations, 100)
                 .start((v) => v.forEach((x, i) => stylers[i].set('x', x)))
+
+
+
+
+
+
+
+
+
 
         </script>
 
