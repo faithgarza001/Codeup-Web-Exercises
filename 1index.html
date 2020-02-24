@@ -6,48 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JavaScript Animation Tutorial</title>
     <link rel="stylesheet" href="CSS/new.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r84/three.min.js"></script>
+    <script crossorigin src="react-animations/node_modules/"></script>
 </head>
+
 <body>
 
 
+<img align="left" alt="Me" class="myself" height="120" src="img/me.jpeg" width="120"><br>
+<blockquote><h2>“No masterpiece was ever created by a lazy artist.” ― Salvador Dali</h2></blockquote>
 
-    <div class="container1">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="border"></div>
-        <div class="border"></div>
-    </div>
-    <svg>
-        <defs>
-            <filter id="goo">
-                <feGaussianBlur in="SourceGraphic"
-                                stdDeviation="10"/>
-                <feColorMatrix in="name" mode='matrix'
-                               values="1 0 0 0 0
-                                       0 1 0 0 0
-                                       0 0 1 0 0
-                                       0 0 0 30 -15"/>
-                <feBlend in="SourceGraphic"/>
-            </filter>
-        </defs>
-    </svg>
-<script crossorigin src="react-animations/node_modules/"></script>
+
+
+<!--<script crossorigin src="react-animations/node_modules/"></script>-->
 <div class="container" style="width: 50%">
-        <div class="inner">
+
         <h1>Welcome to my personal profile,<br> what would you <br> like to do?</h1>
         <p>Please, Never stop believing in yourself ! Thanks</p>
 
@@ -58,15 +31,11 @@
 
             <span class="msg">Full name please!</span>
             <input class="txtfld" placeholder="Name" type="text">
-            <input type="text" placeholder="Email Address then click the Contact me button" class="txtfld">
-
-
-
-
-
+            <input class="txtfld" type="text" placeholder="Email Address">
         </form>
         </div>
-     </div>
+
+
 
         <script src="node_modules/popmotion/dist/popmotion.global.min.js"></script>
         <script>
@@ -74,7 +43,7 @@
             const formElements = (document.querySelector('.inner'));
             const msgPop = popmotion.styler(document.querySelector('.msg'));
             const buttonColor = popmotion.styler(document.querySelector('.btn'));
-       const myAnim = popmotion.tween({
+            const myAnim = popmotion.tween({
                 from: {
                     scale: .7,
                     opacity: 0,
@@ -108,27 +77,17 @@
             });
 
 
-           //.start(container.set)
+//This is the beginning of you staggering circles which have not been created on the page
 
             const stylers = Array
-                .from(formElements.children)//the following js is creating an Array and taking in all the elements
-                .map(popmotion.styler);
+                .from(container.children)
+                .map(styler);
 
-            const animations = Arrays(stylers.length)
-                .fill(popmot.spring({from: 100, to: 0 }));
+            const animations = Array(stylers.length)
+                .fill(spring({ to: 300 }));
 
-            popmotion.stagger(animations, 100)
-                .start((v) => v.forEach((x, i) => stylers[i].set('x', x)))
-
-
-
-
-
-
-
-
-
-
+            stagger(animations, 100)
+                .start((v) => v.forEach((x, i) => stylers[i].set('x', x)));
         </script>
 
 
