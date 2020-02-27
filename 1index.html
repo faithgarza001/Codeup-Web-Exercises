@@ -16,6 +16,7 @@
 <img align="left" alt="Me" class="myself" height="120" src="img/me.jpeg" width="120"><br>
 <blockquote><h2>“No masterpiece was ever created by a lazy artist.” ― Salvador Dali</h2></blockquote>
 
+<!---NAV SIDEBAR--------------->
 
 
 <!--<script crossorigin src="react-animations/node_modules/"></script>-->
@@ -79,15 +80,8 @@
 
 //This is the beginning of you staggering circles which have not been created on the page
 
-            const stylers = Array
-                .from(container.children)
-                .map(styler);
 
-            const animations = Array(stylers.length)
-                .fill(spring({ to: 300 }));
 
-            stagger(animations, 100)
-                .start((v) => v.forEach((x, i) => stylers[i].set('x', x)));
         </script>
 
 
