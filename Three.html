@@ -1,112 +1,112 @@
 
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-<!--    <meta charset=utf-8>-->
-<!--    <title>Three.js Tutorial</title>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>Three.js Tutorial</title>
 
 
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r84/three.min.js">-->
-<!--    </script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r84/three.min.js">
+    </script>
 
-<!--    <style>-->
-<!--        body { margin: 0; }-->
+    <style>
+        body { margin: 0; }
 
-<!--        canvas {  width: 100%; height: 100%;}-->
+        canvas {  width: 100%; height: 100%;}
 
-<!--        #info {-->
+        #info {
 
-<!--            color: lightgreen;-->
-<!--            position: absolute;-->
-<!--            top: 10px;-->
+            color: lightgreen;
+            position: absolute;
+            top: 10px;
 
-<!--            text-align: center;-->
-<!--            z-index: 100;-->
-<!--            font-family:    Arial, Helvetica, sans-serif;-->
-<!--            font-size:      200px;-->
-<!--            font-weight:    bold;-->
-<!--            display:block;-->
+            text-align: center;
+            z-index: 100;
+            font-family:    Arial, Helvetica, sans-serif;
+            font-size:      200px;
+            font-weight:    bold;
+            display:block;
 
-<!--            text-shadow: 0 1px 1px #bbb,-->
-<!--            0 2px 0 #999,-->
-<!--            0 3px 0 #888,-->
-<!--            0 4px 0 #777,-->
-<!--            0 5px 0 #666,-->
-<!--            0 6px 0 #555,-->
-<!--            0 7px 0 #444,-->
-<!--            0 8px 0 #333,-->
-<!--            0 9px 7px #302314;-->
-<!--        }-->
+            text-shadow: 0 1px 1px #bbb,
+            0 2px 0 #999,
+            0 3px 0 #888,
+            0 4px 0 #777,
+            0 5px 0 #666,
+            0 6px 0 #555,
+            0 7px 0 #444,
+            0 8px 0 #333,
+            0 9px 7px #302314;
+        }
 
-<!--        /*.color:hover*/-->
-<!--        /*{*/-->
-<!--        /*    background:#53a7ea;*/-->
-<!--        /*}*/-->
-
-
-
-
-
-<!--    </style>-->
-<!--</head>-->
-
-<!--<body>-->
-
-<!--<div class="color" id="info">Work Harder!!</div>-->
-
-
-<!--<script>-->
-<!--    let scene = new THREE.Scene();-->
-
-<!--    let camera = new THREE.PerspectiveCamera-->
-<!--    ( 40,( window.innerWidth)/(window.innerHeight), 0.1, 1000 );-->
-
-<!--    let renderer = new THREE.WebGLRenderer( {alpha: true} );-->
-<!--    renderer.setSize( window.innerWidth, window.innerHeight );-->
-<!--    document.body.appendChild( renderer.domElement );-->
-
-<!--    let light = new THREE.PointLight(0xffffff);-->
-<!--    light.position.set(-100,200,100);-->
-<!--    scene.add(light);-->
-
-<!--    let light2 = new THREE.PointLight(0xffffdd);-->
-<!--    light2.position.set(100,-2000,-100);-->
-<!--    scene.add(light2);-->
-
-<!--    let geometry = new THREE.BoxGeometry( 4,4,4 );-->
-<!--    let material = new THREE.MeshLambertMaterial({color:0x009900});-->
-<!--    let cube = new THREE.Mesh( geometry, material );-->
-<!--    scene.add( cube );-->
-<!--    camera.position.z = 20;-->
-
-<!--    //here is the function defined and attached to the  object-->
-<!--    cube.setColor = function(color){-->
-<!--        cube.material.color.set(color);-->
-<!--    }-->
-
-
-<!--    cube.setColor(0xFFFFFF);  //change color using hex value or-->
-<!--    cube.setColor("blue");    //set material color by using color name-->
-
-<!--    scene.add( cube );-->
-
-<!--    var render = function () {-->
-<!--        requestAnimationFrame( render );-->
-
-<!--        cube.rotation.x += 0.01;-->
-<!--        cube.rotation.y += 0.01;-->
-
-<!--        renderer.render(scene, camera);-->
-<!--    };-->
-
-<!--    render();-->
-
-<!--    renderer.setClearColor( 0x4b0082, 0.5 );//this is the background color-->
+        /*.color:hover*/
+        /*{*/
+        /*    background:#53a7ea;*/
+        /*}*/
 
 
 
 
-<!--</script>-->
 
-<!--</body>-->
-<!--</html>-->
+    </style>
+</head>
+
+<body>
+
+<div class="color" id="info">Work Harder!!</div>
+
+
+<script>
+    let scene = new THREE.Scene();
+
+    let camera = new THREE.PerspectiveCamera
+    ( 40,( window.innerWidth)/(window.innerHeight), 0.1, 1000 );
+
+    let renderer = new THREE.WebGLRenderer( {alpha: true} );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+
+    let light = new THREE.PointLight(0xffffff);
+    light.position.set(-100,200,100);
+    scene.add(light);
+
+    let light2 = new THREE.PointLight(0xffffdd);
+    light2.position.set(100,-2000,-100);
+    scene.add(light2);
+
+    let geometry = new THREE.BoxGeometry( 4,4,4 );
+    let material = new THREE.MeshLambertMaterial({color:0x009900});
+    let cube = new THREE.Mesh( geometry, material );
+    scene.add( cube );
+    camera.position.z = 20;
+
+    //here is the function defined and attached to the  object
+    cube.setColor = function(color){
+        cube.material.color.set(color);
+    }
+
+
+    cube.setColor(0xFFFFFF);  //change color using hex value or
+    cube.setColor("blue");    //set material color by using color name
+
+    scene.add( cube );
+
+    var render = function () {
+        requestAnimationFrame( render );
+
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+
+        renderer.render(scene, camera);
+    };
+
+    render();
+
+    renderer.setClearColor( 0x4b0082, 0.5 );//this is the background color
+
+
+
+
+</script>
+
+</body>
+</html>

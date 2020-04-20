@@ -71,9 +71,16 @@ blockquote {
     float: right;
 }
 
+*{
+    margin:0; padding:0;
+}
 
 
-
-
+.wrapper{
+width:100%; height:auto; overflow: hidden;
+}
+canvas{
+    background: #000;
+}
 
 
