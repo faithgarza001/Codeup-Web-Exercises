@@ -2,6 +2,7 @@
   "name": "codeup-web-excercises",
   "version": "1.0.0",
   "dependencies": {
+    "facefilter": "^1.1.4",
     "popmotion": "^8.7.1"
   },
   "main": "index.js",
